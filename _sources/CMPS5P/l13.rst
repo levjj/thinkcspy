@@ -1,0 +1,11 @@
+Functions 1
+:::::::::::
+
+.. toctree::
+   :caption: Functions 1
+   :maxdepth: 2
+
+   ../Functions/functions.rst
+   ../Functions/Functionsthatreturnvalues.rst
+   ../Functions/UnitTesting.rst
+   ../Functions/Variablesandparametersarelocal.rst

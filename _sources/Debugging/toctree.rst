@@ -9,5 +9,6 @@ Debugging Interlude 1
    HowtoAvoidDebugging.rst
    BeginningtipsforDebugging.rst
    KnowyourerrorMessages.rst
+   ProgrammingWithStyle.rst
    Summary.rst
    Exercises.rst

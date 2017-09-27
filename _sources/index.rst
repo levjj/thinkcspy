@@ -45,36 +45,35 @@
 Table of Contents
 :::::::::::::::::
 
-.. raw:: html
-
-   <ul>
-   <li><a href="../../assignments/chooseAssignment.html">Assignments</a></li>
-   </ul>
-
 .. toctree::
    :numbered:
    :maxdepth: 3 
 
-   GeneralIntro/toctree.rst
-   SimplePythonData/toctree.rst
-   Debugging/toctree.rst
-   PythonTurtle/toctree.rst
-   PythonModules/toctree.rst
-   Functions/toctree.rst
-   Selection/toctree.rst
-   MoreAboutIteration/toctree.rst
-   Strings/toctree.rst
-   Lists/toctree.rst
-   Files/toctree.rst
-   Dictionaries/toctree.rst
-   Exceptions/toctree.rst
-   GUIandEventDrivenProgramming/toctree.rst
-   IntroRecursion/toctree.rst
-   ClassesBasics/toctree.rst
-   ClassesDiggingDeeper/toctree.rst
+   CMPS5P/l1.rst
+   CMPS5P/l2.rst
+   CMPS5P/l3.rst
+   CMPS5P/l4.rst
+   CMPS5P/l5.rst
+   CMPS5P/l6.rst
+   CMPS5P/l7.rst
+   CMPS5P/l8.rst
+   CMPS5P/l9.rst
+   CMPS5P/l10.rst
+   CMPS5P/l11.rst
+   CMPS5P/l12.rst
+   CMPS5P/l13.rst
+   CMPS5P/l14.rst
+   CMPS5P/l15.rst
+   CMPS5P/l16.rst
+   CMPS5P/l17.rst
+   CMPS5P/l18.rst
+   CMPS5P/l19.rst
+   CMPS5P/l20.rst
+   CMPS5P/l21.rst
 
-Labs
-::::
+
+Optional Labs
+:::::::::::::
 
 .. toctree::
    :caption: Labs

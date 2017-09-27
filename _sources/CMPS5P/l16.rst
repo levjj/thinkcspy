@@ -1,0 +1,12 @@
+Tuples
+::::::
+
+.. toctree::
+   :caption: Tuples
+   :maxdepth: 2
+
+   ../Lists/TuplesandMutability.rst
+   ../Lists/TupleAssignment.rst
+   ../Lists/TuplesasReturnValues.rst
+   ../Lists/Glossary.rst
+   ../Lists/Exercises.rst

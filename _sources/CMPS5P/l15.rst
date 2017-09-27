@@ -1,0 +1,11 @@
+Side Effects
+::::::::::::
+
+.. toctree::
+   :caption: Side Effects
+   :maxdepth: 2
+
+   ../Lists/UsingListsasParameters.rst
+   ../Lists/PureFunctions.rst
+   ../Lists/WhichisBetter.rst
+   ../Lists/FunctionsthatProduceLists.rst

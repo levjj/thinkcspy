@@ -1,0 +1,29 @@
+Strings
+:::::::
+
+.. toctree::
+   :caption: Strings
+   :maxdepth: 2
+
+   ../Strings/StringsRevisited.rst
+   ../Strings/ACollectionDataType.rst
+   ../Strings/OperationsonStrings.rst
+   ../Strings/IndexOperatorWorkingwiththeCharactersofaString.rst
+   ../Strings/StringMethods.rst
+   ../Strings/Length.rst
+   ../Strings/TheSliceOperator.rst
+   ../Strings/StringComparison.rst
+   ../Strings/StringsareImmutable.rst
+   ../Strings/TraversalandtheforLoopByItem.rst
+   ../Strings/TraversalandtheforLoopByIndex.rst
+   ../Strings/TraversalandthewhileLoop.rst
+   ../Strings/Theinandnotinoperators.rst
+   ../Strings/TheAccumulatorPatternwithStrings.rst
+   ../Strings/TurtlesandStringsandLSystems.rst
+   ../Strings/Loopingandcounting.rst
+   ../Strings/Afindfunction.rst
+   ../Strings/Optionalparameters.rst
+   ../Strings/Characterclassification.rst
+   ../Strings/Summary.rst
+   ../Strings/Glossary.rst
+   ../Strings/Exercises.rst
