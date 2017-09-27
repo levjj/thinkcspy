@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2.4. Variables &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.5. Variable Names and Keywords" href="VariableNamesandKeywords.html" />
+    <link rel="prev" title="2.3. Type conversion functions" href="Typeconversionfunctions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="variables">
+<span id="id1"></span><h1>2.4. Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
+<div id="assignvid" class="video_popup runestone" >
+<video controls preload="none"  poster="../_static/assignment.png">
+    <source src="http://media.interactivepython.org/thinkcsVideos/Variables.mov" type="video/mp4"></source>
+    <source src="http://media.interactivepython.org/thinkcsVideos/Variables.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      var rb = new RunestoneBase();
+      $('#assignvid_thumb').click(function(e) {
+         $('#assignvid').show();
+         $('#assignvid_thumb').hide();
+         rb.logBookEvent({'event':'video','act':'play','div_id': 'assignvid'});
+         // Log the run event
+      });
+      $('#assignvid video').one("click", function(){
+        this.play();
+      });
+      $('#assignvid video').one("play", function(){
+        rb.logBookEvent({'event':'video','act':'play','div_id': 'assignvid'});
+      });
+   });
+</script>
+<p>One of the most powerful features of a programming language is the ability to
+manipulate <strong>variables</strong>. A variable is a name that refers to a value.</p>
+<p><strong>Assignment statements</strong> create new variables and also give them values to refer to.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s up, Doc?&quot;</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
+</pre></div>
+</div>
+<p>This example makes three assignments. The first assigns the string value
+<code class="docutils literal"><span class="pre">&quot;What's</span> <span class="pre">up,</span> <span class="pre">Doc?&quot;</span></code> to a new variable named <code class="docutils literal"><span class="pre">message</span></code>. The second gives the
+integer <code class="docutils literal"><span class="pre">17</span></code> to <code class="docutils literal"><span class="pre">n</span></code>, and the third assigns the floating-point number
+<code class="docutils literal"><span class="pre">3.14159</span></code> to a variable called <code class="docutils literal"><span class="pre">pi</span></code>.</p>
+<p>The <strong>assignment token</strong>, <code class="docutils literal"><span class="pre">=</span></code>, should not be confused with <em>equality</em> (we will see later that equality uses the
+<code class="docutils literal"><span class="pre">==</span></code> token).  The assignment statement links a <em>name</em>, on the left hand
+side of the operator, with a <em>value</em>, on the right hand side.  This is why you
+will get an error if you enter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="mi">17</span> <span class="o">=</span> <span class="n">n</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">When reading or writing code, say to yourself “n is assigned 17” or “n gets
+the value 17” or “n is a reference to the object 17” or “n refers to the object 17”.  Don’t say “n equals 17”.</p>
+</div>
+<p>A common way to represent variables on paper is to write the name with an arrow
+pointing to the variable’s value. This kind of figure, known as a <strong>reference diagram</strong>, is often called a <strong>state
+snapshot</strong> because it shows what state each of the variables is in at a
+particular instant in time.  (Think of it as the variable’s state of mind).
+This diagram shows the result of executing the assignment statements shown above.</p>
+<img alt="Reference Diagram" src="../_images/refdiagram1.png" />
+<p>If you ask Python to evaluate a variable, it will produce the value
+that is currently linked to the variable.  In other words, evaluating a variable will give you the value that is referred to
+by the variable.</p>
+
+<div data-childcomponent="ch02_9" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=ch02_9 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+message = "What's up, Doc?"
+n = 17
+pi = 3.14159
+
+print(message)
+print(n)
+print(pi)
+</textarea>
+</div>
+<p>In each case the result is the value of the variable.
+To see this in even more detail, we can run the program using codelens.</p>
+
+<div class="runestone" style="max-width: none;">
+<div class="alert alert-warning cd_section">
+<div id="ch02_9_codelens"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch02_9_codelens)</span> </p>
+</div>
+<script type="text/javascript">
+var ch02_9_codelens_trace = {"code": "message = \"What's up, Doc?\"\nn = 17\npi = 3.14159\n\nprint(message)\nprint(n)\nprint(pi)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["message"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"message": "What's up, Doc?"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["message", "n"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"message": "What's up, Doc?", "n": 17}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["message", "n", "pi"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"message": "What's up, Doc?", "pi": 3.1416, "n": 17}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["message", "n", "pi"], "stdout": "What's up, Doc?\n", "func_name": "<module>", "stack_to_render": [], "globals": {"message": "What's up, Doc?", "pi": 3.1416, "n": 17}, "heap": {}, "line": 6, "event": "step_line"}, {"ordered_globals": ["message", "n", "pi"], "stdout": "What's up, Doc?\n17\n", "func_name": "<module>", "stack_to_render": [], "globals": {"message": "What's up, Doc?", "pi": 3.1416, "n": 17}, "heap": {}, "line": 7, "event": "step_line"}, {"ordered_globals": ["message", "n", "pi"], "stdout": "What's up, Doc?\n17\n3.14159\n", "func_name": "<module>", "stack_to_render": [], "globals": {"message": "What's up, Doc?", "pi": 3.1416, "n": 17}, "heap": {}, "line": 7, "event": "return"}]};
+var ch02_9_codelens_vis;
+
+$(document).ready(function() {
+    try {
+        ch02_9_codelens_vis = new ExecutionVisualizer('ch02_9_codelens',ch02_9_codelens_trace,
+                                    {embeddedMode: false,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(ch02_9_codelens_vis,'ch02_9_codelens');
+        styleButtons('ch02_9_codelens');
+        allVisualizers.push(ch02_9_codelens_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component ch02_9_codelens_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#ch02_9_codelens_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch02_9_codelens'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (ch02_9_codelens_vis) {
+        ch02_9_codelens_vis.redrawConnectors();
+    }
+});
+</script>
+</div>
+<p>Now, as you step through the statements, you can see
+the variables and the values they reference as those references are
+created.</p>
+<p>Variables also have
+types; again, we can ask the interpreter what they are.</p>
+
+<div data-childcomponent="ch02_10" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=ch02_10 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+message = "What's up, Doc?"
+n = 17
+pi = 3.14159
+
+print(type(message))
+print(type(n))
+print(type(pi))
+</textarea>
+</div>
+<p>The type of a variable is the type of the object it currently refers to.</p>
+<p>We use variables in a program to “remember” things, like the current score at
+the football game.  But variables are <em>variable</em>. This means they can change
+over time, just like the scoreboard at a football game.  You can assign a value
+to a variable, and later assign a different value to the same variable.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is different from math. In math, if you give <cite>x</cite> the value 3, it
+cannot change to refer to a different value half-way through your
+calculations!</p>
+</div>
+<p>To see this, read and then run the following program.
+You’ll notice we change the value of <cite>day</cite> three times, and on the third
+assignment we even give it a value that is of a different type.</p>
+
+<div class="runestone" style="max-width: none;">
+<div class="alert alert-warning cd_section">
+<div id="ch02_11"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch02_11)</span> </p>
+</div>
+<script type="text/javascript">
+var ch02_11_trace = {"code": "day = \"Thursday\"\nprint(day)\nday = \"Friday\"\nprint(day)\nday = 21\nprint(day)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["day"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"day": "Thursday"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["day"], "stdout": "Thursday\n", "func_name": "<module>", "stack_to_render": [], "globals": {"day": "Thursday"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["day"], "stdout": "Thursday\n", "func_name": "<module>", "stack_to_render": [], "globals": {"day": "Friday"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["day"], "stdout": "Thursday\nFriday\n", "func_name": "<module>", "stack_to_render": [], "globals": {"day": "Friday"}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["day"], "stdout": "Thursday\nFriday\n", "func_name": "<module>", "stack_to_render": [], "globals": {"day": 21}, "heap": {}, "line": 6, "event": "step_line"}, {"ordered_globals": ["day"], "stdout": "Thursday\nFriday\n21\n", "func_name": "<module>", "stack_to_render": [], "globals": {"day": 21}, "heap": {}, "line": 6, "event": "return"}]};
+var ch02_11_vis;
+
+$(document).ready(function() {
+    try {
+        ch02_11_vis = new ExecutionVisualizer('ch02_11',ch02_11_trace,
+                                    {embeddedMode: false,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(ch02_11_vis,'ch02_11');
+        styleButtons('ch02_11');
+        allVisualizers.push(ch02_11_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component ch02_11_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#ch02_11_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch02_11'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (ch02_11_vis) {
+        ch02_11_vis.redrawConnectors();
+    }
+});
+</script>
+</div>
+<p>A great deal of programming is about having the computer remember things.  For example, we might want to keep
+track of the number of missed calls on your phone.  Each time another call is missed, we will arrange to update
+or change the variable so that it will always reflect the correct value.</p>
+<p><strong>Check your understanding</strong></p>
+
+            <div class="runestone">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="test_question2_3_2">
+            <p>data-4-1: What is printed when the following statements execute?</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">day</span> <span class="o">=</span> <span class="s2">&quot;Thursday&quot;</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mf">32.5</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">19</span>
+<span class="k">print</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="test_question2_3_2_opt_a">Nothing is printed. A runtime error occurs.</li><li data-component="feedback" id="test_question2_3_2_opt_a">It is legal to change the type of data that a variable holds in Python.</li>
+            
+            <li data-component="answer"  id="test_question2_3_2_opt_b">Thursday</li><li data-component="feedback" id="test_question2_3_2_opt_b">This is the first value assigned to the variable day, but the next statements reassign that variable to new values.</li>
+            
+            <li data-component="answer"  id="test_question2_3_2_opt_c">32.5</li><li data-component="feedback" id="test_question2_3_2_opt_c">This is the second value assigned to the variable day, but the next statement reassigns that variable to a new value.</li>
+            
+            <li data-component="answer" data-correct id="test_question2_3_2_opt_d">19</li><li data-component="feedback" id="test_question2_3_2_opt_d">The variable day will contain the last value assigned to it when it is printed.</li>
+            
+
+            </ul>
+            </div>
+            <span class="target" id="index-0"></span></div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 2.3. Type conversion functions' data-toggle="tooltip">
+    <a href="Typeconversionfunctions.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+
+  <li id="relations-next" class="navLink" title='Next Section - 2.5. Variable Names and Keywords' data-toggle="tooltip" >
+    <a href="VariableNamesandKeywords.html" style="color:#999">
+      Next Section - 2.5. Variable Names and Keywords
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <li class="navLink" style="text-align: center" title='2. Simple Python Data 1' data-toggle="tooltip" >
+    <a href="../CMPS5P/l2.html">
+      <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
+    </a>
+  </li>
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

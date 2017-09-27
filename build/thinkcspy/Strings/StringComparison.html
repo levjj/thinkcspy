@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>9.8. String Comparison &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9.9. Strings are Immutable" href="StringsareImmutable.html" />
+    <link rel="prev" title="9.7. The Slice Operator" href="TheSliceOperator.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="string-comparison">
+<span id="index-0"></span><h1>9.8. String Comparison<a class="headerlink" href="#string-comparison" title="Permalink to this headline">¶</a></h1>
+<p>The comparison operators also work on strings. To see if two strings are equal you simply write a boolean
+expression using the equality operator.</p>
+
+<div data-childcomponent="ch08_comp1" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=ch08_comp1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+word = "banana"
+if word == "banana":
+    print("Yes, we have bananas!")
+else:
+    print("Yes, we have NO bananas!")
+</textarea>
+</div>
+<p>Other comparison operations are useful for putting words in
+<a class="reference external" href="http://en.wikipedia.org/wiki/Lexicographic_order">lexicographical order</a>.
+This is similar to the alphabetical order you would use with a dictionary,
+except that all the uppercase letters come before all the lowercase letters.</p>
+
+<div data-childcomponent="ch08_comp2" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=ch08_comp2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+word = "zebra"
+
+if word < "banana":
+    print("Your word, " + word + ", comes before banana.")
+elif word > "banana":
+    print("Your word, " + word + ", comes after banana.")
+else:
+    print("Yes, we have no bananas!")
+</textarea>
+</div>
+<p>It is probably clear to you that the word <cite>apple</cite> would be less than (come before) the word <code class="docutils literal"><span class="pre">banana</span></code>.
+After all, <cite>a</cite> is before <cite>b</cite> in the alphabet.  But what if we consider the words <code class="docutils literal"><span class="pre">apple</span></code> and <code class="docutils literal"><span class="pre">Apple</span></code>?
+Are they the same?</p>
+
+<div data-childcomponent="chp08_ord1" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=chp08_ord1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+print("apple" < "banana")
+
+print("apple" == "Apple")
+print("apple" < "Apple")
+</textarea>
+</div>
+<p>It turns out, as you recall from our discussion of variable names, that uppercase and lowercase letters are considered to be different from one another.  The way the computer knows they are different is that
+each character is assigned a unique integer value.  “A” is 65, “B” is 66, and “5” is 53.  The way you can
+find out the so-called <strong>ordinal value</strong> for a given character is to use a character function called <code class="docutils literal"><span class="pre">ord</span></code>.</p>
+
+<div data-childcomponent="ch08_ord2" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=ch08_ord2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+print(ord("A"))
+print(ord("B"))
+print(ord("5"))
+
+print(ord("a"))
+print("apple" > "Apple")
+</textarea>
+</div>
+<p>When you compare characters or strings to one another, Python converts the characters into their equivalent ordinal values and compares the integers from left to right.  As you can see from the example above, “a” is greater than “A” so “apple” is greater than “Apple”.</p>
+<p>Humans commonly ignore capitalization when comparing two words.  However, computers do not.  A common way to address this issue is to convert strings to a standard
+format, such as all lowercase, before performing the comparison.</p>
+<p>There is also a similar function called <code class="docutils literal"><span class="pre">chr</span></code> that converts integers into their character equivalent.</p>
+
+<div data-childcomponent="ch08_ord3" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=ch08_ord3 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+print(chr(65))
+print(chr(66))
+
+print(chr(49))
+print(chr(53))
+
+print("The character for 32 is", chr(32), "!!!")
+print(ord(" "))
+</textarea>
+</div>
+<p>One thing to note in the last two examples is the fact that the space character has an ordinal value (32).  Even though you don’t see it, it is an actual character.  We sometimes call it a <em>nonprinting</em> character.</p>
+<p><strong>Check your understanding</strong></p>
+
+            <div class="runestone">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="test_question8_6_1">
+            <p>strings-8-1: Evaluate the following comparison:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="s2">&quot;Dog&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;Doghouse&quot;</span>
+</pre></div>
+</div>
+
+            <li data-component="answer" data-correct id="test_question8_6_1_opt_a">True</li><li data-component="feedback" id="test_question8_6_1_opt_a">Both match up to the g but Dog is shorter than Doghouse so it comes first in the dictionary.</li>
+            
+            <li data-component="answer"  id="test_question8_6_1_opt_b">False</li><li data-component="feedback" id="test_question8_6_1_opt_b">Strings are compared character by character.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="test_question8_6_2">
+            <p>strings-8-2: Evaluate the following comparison:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="s2">&quot;dog&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;Dog&quot;</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="test_question8_6_2_opt_a">True</li><li data-component="feedback" id="test_question8_6_2_opt_a">d is greater than D according to the ord function (68 versus 100).</li>
+            
+            <li data-component="answer" data-correct id="test_question8_6_2_opt_b">False</li><li data-component="feedback" id="test_question8_6_2_opt_b">Yes, upper case is less than lower case according to the ordinal values of the characters.</li>
+            
+            <li data-component="answer"  id="test_question8_6_2_opt_c">They are the same word</li><li data-component="feedback" id="test_question8_6_2_opt_c">Python is case sensitive meaning that upper case and lower case characters are different.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="test_question8_6_3">
+            <p>strings-8-3: Evaluate the following comparison:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="s2">&quot;dog&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;Doghouse&quot;</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="test_question8_6_3_opt_a">True</li><li data-component="feedback" id="test_question8_6_3_opt_a">d is greater than D.</li>
+            
+            <li data-component="answer" data-correct id="test_question8_6_3_opt_b">False</li><li data-component="feedback" id="test_question8_6_3_opt_b">The length does not matter.  Lower case d is greater than upper case D.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 9.7. The Slice Operator' data-toggle="tooltip">
+    <a href="TheSliceOperator.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+
+  <li id="relations-next" class="navLink" title='Next Section - 9.9. Strings are Immutable' data-toggle="tooltip" >
+    <a href="StringsareImmutable.html" style="color:#999">
+      Next Section - 9.9. Strings are Immutable
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <li class="navLink" style="text-align: center" title='9. Strings' data-toggle="tooltip" >
+    <a href="../CMPS5P/l9.html">
+      <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
+    </a>
+  </li>
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

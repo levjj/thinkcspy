@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>6.9. Summary of Turtle Methods &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.10. Glossary" href="Glossary.html" />
+    <link rel="prev" title="6.8. A Few More turtle Methods and Observations" href="AFewMoreturtleMethodsandObservations.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="summary-of-turtle-methods">
+<span id="turtle-methods"></span><h1>6.9. Summary of Turtle Methods<a class="headerlink" href="#summary-of-turtle-methods" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="12%" />
+<col width="76%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">Parameters</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Turtle</td>
+<td>None</td>
+<td>Creates and returns a new turtle object</td>
+</tr>
+<tr class="row-odd"><td>forward</td>
+<td>distance</td>
+<td>Moves the turtle forward</td>
+</tr>
+<tr class="row-even"><td>backward</td>
+<td>distance</td>
+<td>Moves the turle backward</td>
+</tr>
+<tr class="row-odd"><td>right</td>
+<td>angle</td>
+<td>Turns the turtle clockwise</td>
+</tr>
+<tr class="row-even"><td>left</td>
+<td>angle</td>
+<td>Turns the turtle counter clockwise</td>
+</tr>
+<tr class="row-odd"><td>up</td>
+<td>None</td>
+<td>Picks up the turtles tail</td>
+</tr>
+<tr class="row-even"><td>down</td>
+<td>None</td>
+<td>Puts down the turtles tail</td>
+</tr>
+<tr class="row-odd"><td>color</td>
+<td>color name</td>
+<td>Changes the color of the turtle’s tail</td>
+</tr>
+<tr class="row-even"><td>fillcolor</td>
+<td>color name</td>
+<td>Changes the color of the turtle will use to fill a polygon</td>
+</tr>
+<tr class="row-odd"><td>heading</td>
+<td>None</td>
+<td>Returns the current heading</td>
+</tr>
+<tr class="row-even"><td>position</td>
+<td>None</td>
+<td>Returns the current position</td>
+</tr>
+<tr class="row-odd"><td>goto</td>
+<td>x,y</td>
+<td>Move the turtle to position x,y</td>
+</tr>
+<tr class="row-even"><td>begin_fill</td>
+<td>None</td>
+<td>Remember the starting point for a filled polygon</td>
+</tr>
+<tr class="row-odd"><td>end_fill</td>
+<td>None</td>
+<td>Close the polygon and fill with the current fill color</td>
+</tr>
+<tr class="row-even"><td>dot</td>
+<td>None</td>
+<td>Leave a dot at the current position</td>
+</tr>
+<tr class="row-odd"><td>stamp</td>
+<td>None</td>
+<td>Leaves an impression of a turtle shape at the current location</td>
+</tr>
+<tr class="row-even"><td>shape</td>
+<td>shape name</td>
+<td>Should be ‘arrow’, ‘classic’, ‘turtle’, ‘circle’ or ‘square’</td>
+</tr>
+</tbody>
+</table>
+<p>Once you are comfortable with the basics of turtle graphics you can read about even
+more options on the <a class="reference external" href="http://docs.python.org/dev/py3k/library/turtle.html">Python Docs Website</a>.  Note that we
+will describe Python Docs in more detail in the next chapter.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.</p>
+
+<div data-childcomponent="scratch_03" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=scratch_03 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+
+
+</textarea>
+</div>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 6.8. A Few More turtle Methods and Observations' data-toggle="tooltip">
+    <a href="AFewMoreturtleMethodsandObservations.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+
+  <li id="relations-next" class="navLink" title='Next Section - 6.10. Glossary' data-toggle="tooltip" >
+    <a href="Glossary.html" style="color:#999">
+      Next Section - 6.10. Glossary
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <li class="navLink" style="text-align: center" title='6. For Loops and Turtle Graphics' data-toggle="tooltip" >
+    <a href="../CMPS5P/l6.html">
+      <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
+    </a>
+  </li>
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

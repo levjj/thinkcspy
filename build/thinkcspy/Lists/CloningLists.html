@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>11.5. Cloning Lists &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="11.6. Repetition and References" href="RepetitionandReferences.html" />
+    <link rel="prev" title="11.4. Aliasing" href="Aliasing.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="cloning-lists">
+<span id="index-0"></span><h1>11.5. Cloning Lists<a class="headerlink" href="#cloning-lists" title="Permalink to this headline">¶</a></h1>
+<p>If we want to modify a list and also keep a copy of the original, we need to be
+able to make a copy of the list itself, not just the reference. This process is
+sometimes called <strong>cloning</strong>, to avoid the ambiguity of the word copy.</p>
+<p>The easiest way to clone a list is to use the slice operator.</p>
+<p>Taking any slice of <code class="docutils literal"><span class="pre">a</span></code> creates a new list. In this case the slice happens to
+consist of the whole list.</p>
+
+<div class="runestone" style="max-width: none;">
+<div class="alert alert-warning cd_section">
+<div id="chp09_is4"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (chp09_is4)</span> </p>
+</div>
+<script type="text/javascript">
+var chp09_is4_trace = {"code": "a = [81, 82, 83]\n\nb = a[:]       # make a clone using slice\nprint(a == b)\nprint(a is b)\n\nb[0] = 5\n\nprint(a)\nprint(b)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["a"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"a": ["REF", 1]}, "heap": {"1": ["LIST", 81, 82, 83]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["a", "b"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"a": ["REF", 1], "b": ["REF", 2]}, "heap": {"1": ["LIST", 81, 82, 83], "2": ["LIST", 81, 82, 83]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["a", "b"], "stdout": "True\n", "func_name": "<module>", "stack_to_render": [], "globals": {"a": ["REF", 1], "b": ["REF", 2]}, "heap": {"1": ["LIST", 81, 82, 83], "2": ["LIST", 81, 82, 83]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["a", "b"], "stdout": "True\nFalse\n", "func_name": "<module>", "stack_to_render": [], "globals": {"a": ["REF", 1], "b": ["REF", 2]}, "heap": {"1": ["LIST", 81, 82, 83], "2": ["LIST", 81, 82, 83]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["a", "b"], "stdout": "True\nFalse\n", "func_name": "<module>", "stack_to_render": [], "globals": {"a": ["REF", 1], "b": ["REF", 2]}, "heap": {"1": ["LIST", 81, 82, 83], "2": ["LIST", 5, 82, 83]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["a", "b"], "stdout": "True\nFalse\n[81, 82, 83]\n", "func_name": "<module>", "stack_to_render": [], "globals": {"a": ["REF", 1], "b": ["REF", 2]}, "heap": {"1": ["LIST", 81, 82, 83], "2": ["LIST", 5, 82, 83]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["a", "b"], "stdout": "True\nFalse\n[81, 82, 83]\n[5, 82, 83]\n", "func_name": "<module>", "stack_to_render": [], "globals": {"a": ["REF", 1], "b": ["REF", 2]}, "heap": {"1": ["LIST", 81, 82, 83], "2": ["LIST", 5, 82, 83]}, "line": 10, "event": "return"}]};
+var chp09_is4_vis;
+
+$(document).ready(function() {
+    try {
+        chp09_is4_vis = new ExecutionVisualizer('chp09_is4',chp09_is4_trace,
+                                    {embeddedMode: false,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(chp09_is4_vis,'chp09_is4');
+        styleButtons('chp09_is4');
+        allVisualizers.push(chp09_is4_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component chp09_is4_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#chp09_is4_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'chp09_is4'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (chp09_is4_vis) {
+        chp09_is4_vis.redrawConnectors();
+    }
+});
+</script>
+</div>
+<p>Now we are free to make changes to <code class="docutils literal"><span class="pre">b</span></code> without worrying about <code class="docutils literal"><span class="pre">a</span></code>.  Again, we can clearly see in codelens that <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code> are entirely different list objects.</p>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 11.4. Aliasing' data-toggle="tooltip">
+    <a href="Aliasing.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+
+  <li id="relations-next" class="navLink" title='Next Section - 11.6. Repetition and References' data-toggle="tooltip" >
+    <a href="RepetitionandReferences.html" style="color:#999">
+      Next Section - 11.6. Repetition and References
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <li class="navLink" style="text-align: center" title='11. Lists 2' data-toggle="tooltip" >
+    <a href="../CMPS5P/l11.html">
+      <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
+    </a>
+  </li>
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

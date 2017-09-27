@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Objects are Mutable &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="objects-are-mutable">
+<h1>Objects are Mutable<a class="headerlink" href="#objects-are-mutable" title="Permalink to this headline">¶</a></h1>
+<p>We can change the state of an object by making an assignment to one of its instance variables.
+For example, we could change the numerator of the fraction by assigning a new
+value to <code class="docutils literal"><span class="pre">self.num</span></code>.  Likewise, we could do the same thing for <code class="docutils literal"><span class="pre">self.den</span></code>.</p>
+<p>One place where this type of modification makes sense is when we place a fraction in <strong>lowest terms</strong>.  Lowest terms simply
+means that the numerator and denominator do not share any common factors.  For example, <code class="docutils literal"><span class="pre">12/16</span></code> is a fraction but it is
+not in lowest terms since 2 can divide into both 12 and 16.  We call 2 a <strong>common divisor</strong>.  If we divide the numerator
+and the denominator by a common divisor, we get an equivalent fraction.  If we divide by the <strong>greatest common divisor</strong>,
+we will get the lowest terms representation.  In this case 4 would be the greatest common divisor and the lowest terms
+representation would be 3/4.</p>
+<p>There is a very nice iterative method for computing the greatest common divisor of two integers.  Try to run the
+function on a number of different examples.</p>
+
+<div data-childcomponent="fractions_gcd" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=fractions_gcd data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def gcd(m, n):
+    while m % n != 0:
+        oldm = m
+        oldn = n
+
+        m = oldn
+        n = oldm % oldn
+
+    return n
+
+print(gcd(12, 16))
+</textarea>
+</div>
+<p>Now that we have a function that can help us with finding the greatest common divisor, we can use that to implement
+a fraction method called <code class="docutils literal"><span class="pre">simplify</span></code>.  We will ask the fraction “to put itself in lowest terms”.</p>
+<p>The <code class="docutils literal"><span class="pre">simplify</span></code> method will pass the numerator and the denominator to the <code class="docutils literal"><span class="pre">gcd</span></code> function to find the
+greatest common divisor.  It will then modify itself by dividing its <code class="docutils literal"><span class="pre">num</span></code> and its <code class="docutils literal"><span class="pre">den</span></code> by that value.</p>
+
+<div data-childcomponent="fractions_simplify" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=fractions_simplify data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def gcd(m, n):
+    while m % n != 0:
+        oldm = m
+        oldn = n
+
+        m = oldn
+        n = oldm % oldn
+
+    return n
+
+class Fraction:
+
+    def __init__(self, top, bottom):
+
+        self.num = top        # the numerator is on top
+        self.den = bottom     # the denominator is on the bottom
+
+    def __str__(self):
+        return str(self.num) + "/" + str(self.den)
+
+    def simplify(self):
+        common = gcd(self.num, self.den)
+
+        self.num = self.num // common
+        self.den = self.den // common
+
+myfraction = Fraction(12, 16)
+
+print(myfraction)
+myfraction.simplify()
+print(myfraction)
+</textarea>
+</div>
+<p>There are two important things to note about this implementation.  First, the <code class="docutils literal"><span class="pre">gcd</span></code> function is not
+a method of the class.  It does not belong to <code class="docutils literal"><span class="pre">Fraction</span></code>.  Instead it is a function that is used by <code class="docutils literal"><span class="pre">Fraction</span></code>
+to assist in a task that needs to be performed.  This type of function is often called a <strong>helper function</strong>.  Second,
+the <code class="docutils literal"><span class="pre">simplify</span></code> method does not return anything.  Its job is to modify the object itself.  This type of method is
+known as a <strong>mutator</strong> method because it mutates or changes the internal state of the object.</p>
+<span class="target" id="index-0"></span></div>
+
+
+  
+      
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

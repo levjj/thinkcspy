@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>8.6. Newton’s Method &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8.7. The Accumulator Pattern Revisited" href="accumulatorRevisited.html" />
+    <link rel="prev" title="8.5. The 3n + 1 Sequence" href="The3n1Sequence.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="newton-s-method">
+<span id="index-0"></span><h1>8.6. Newton’s Method<a class="headerlink" href="#newton-s-method" title="Permalink to this headline">¶</a></h1>
+<p>Loops are often used in programs that compute numerical results by starting
+with an approximate answer and iteratively improving it.</p>
+<p>For example, one way of computing square roots is Newton’s method.  Suppose
+that you want to know the square root of <code class="docutils literal"><span class="pre">n</span></code>. If you start with almost any
+approximation, you can compute a better approximation with the following
+formula:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">better</span> <span class="o">=</span>  <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">approx</span> <span class="o">+</span> <span class="n">n</span><span class="o">/</span><span class="n">approx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Execute this algorithm a few times using your calculator.  Can you
+see why each iteration brings your estimate a little closer?  One of the amazing
+properties of this particular algorithm is how quickly it converges to an accurate
+answer.</p>
+<p>The following implementation of Newton’s method requires two parameters.  The first is the
+value whose square root will be approximated.  The second is the number of times to iterate the
+calculation yielding a better result.</p>
+
+<div data-childcomponent="chp07_newtonsdef" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=chp07_newtonsdef data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def newtonSqrt(n, howmany):
+    approx = 0.5 * n
+    for i in range(howmany):
+        betterapprox = 0.5 * (approx + n/approx)
+        approx = betterapprox
+    return betterapprox
+
+print(newtonSqrt(100, 10))
+print(newtonSqrt(4, 10))
+print(newtonSqrt(1, 10))
+</textarea>
+</div>
+<div class="admonition-modify-the-program admonition">
+<p class="first admonition-title">Modify the program …</p>
+<p class="last">All three of the calls to <code class="docutils literal"><span class="pre">newtonSqrt</span></code> in the previous example produce the correct square root for the first parameter.  However, were 10 iterations required to get the correct answer? Experiment with different values for the number of repetitions (the 10 on lines 8, 9, and 10). For each of these calls, find the <strong>smallest</strong> value for the number of repetitions that will produce the <strong>correct</strong> result.</p>
+</div>
+<p>Repeating more than the required number of times is a waste of computing resources. So definite iteration is not a good solution to this problem.</p>
+<p>In general, Newton’s algorithm will eventually reach a point where the new approximation is no better than the previous.  At that point, we could simply stop.
+In other words, by repeatedly applying this formula until the better approximation gets close
+enough to the previous one, we can write a function for computing the square root that uses the number of iterations necessary and no more.</p>
+<p>This implementation, shown in codelens,
+uses a <code class="docutils literal"><span class="pre">while</span></code> condition to execute until the approximation is no longer changing.  Each time through the loop we compute a “better” approximation using the formula described earlier.  As long as the “better” is different, we try again.  Step through the program and watch the approximations get closer and closer.</p>
+
+<div class="runestone" style="max-width: none;">
+<div class="alert alert-warning cd_section">
+<div id="chp07_newtonswhile"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (chp07_newtonswhile)</span> </p>
+</div>
+<script type="text/javascript">
+var chp07_newtonswhile_trace = {"code": "def newtonSqrt(n):\n    approx = 0.5 * n\n    better = 0.5 * (approx + n/approx)\n    while better != approx:\n        approx = better\n        better = 0.5 * (approx + n/approx)\n    return approx\n\nprint(newtonSqrt(10))", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"approx": ["SPECIAL_FLOAT", "5.0"], "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.5, "approx": ["SPECIAL_FLOAT", "5.0"], "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.5, "approx": ["SPECIAL_FLOAT", "5.0"], "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.5, "approx": 3.5, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1786, "approx": 3.5, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1786, "approx": 3.5, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1786, "approx": 3.1786, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1623, "approx": 3.1786, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1623, "approx": 3.1786, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1623, "approx": 3.1623, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1623, "approx": 3.1623, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1623, "approx": 3.1623, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1623, "approx": 3.1623, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1623, "approx": 3.1623, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1623, "approx": 3.1623, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1623, "approx": 3.1623, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1623, "approx": 3.1623, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1623, "approx": 3.1623, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["newtonSqrt"], "stdout": "", "func_name": "newtonSqrt", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"better": 3.1623, "__return__": 3.1623, "approx": 3.1623, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "newtonSqrt", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "newtonSqrt_f1", "ordered_varnames": ["n", "approx", "better", "__return__"]}], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 7, "event": "return"}, {"ordered_globals": ["newtonSqrt"], "stdout": "3.16227766017\n", "func_name": "<module>", "stack_to_render": [], "globals": {"newtonSqrt": ["REF", 1]}, "heap": {"1": ["FUNCTION", "newtonSqrt(n)", null]}, "line": 9, "event": "return"}]};
+var chp07_newtonswhile_vis;
+
+$(document).ready(function() {
+    try {
+        chp07_newtonswhile_vis = new ExecutionVisualizer('chp07_newtonswhile',chp07_newtonswhile_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(chp07_newtonswhile_vis,'chp07_newtonswhile');
+        styleButtons('chp07_newtonswhile');
+        allVisualizers.push(chp07_newtonswhile_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component chp07_newtonswhile_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#chp07_newtonswhile_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'chp07_newtonswhile'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (chp07_newtonswhile_vis) {
+        chp07_newtonswhile_vis.redrawConnectors();
+    }
+});
+</script>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal"><span class="pre">while</span></code> statement shown above uses comparison of two floating point numbers in the condition.  Since floating point numbers are themselves approximation of real numbers in mathematics, it is often
+better to compare for a result that is within some small threshold of the value you are looking for.</p>
+</div>
+<span class="target" id="index-1"></span></div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 8.5. The 3n + 1 Sequence' data-toggle="tooltip">
+    <a href="The3n1Sequence.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+
+  <li id="relations-next" class="navLink" title='Next Section - 8.7. The Accumulator Pattern Revisited' data-toggle="tooltip" >
+    <a href="accumulatorRevisited.html" style="color:#999">
+      Next Section - 8.7. The Accumulator Pattern Revisited
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <li class="navLink" style="text-align: center" title='8. More About Iteration' data-toggle="tooltip" >
+    <a href="../CMPS5P/l8.html">
+      <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
+    </a>
+  </li>
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

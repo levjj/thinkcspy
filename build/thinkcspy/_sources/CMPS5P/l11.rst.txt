@@ -1,0 +1,19 @@
+Lists 2
+:::::::
+
+.. toctree::
+   :caption: Lists 2
+   :maxdepth: 2
+
+   ../Lists/ListsareMutable.rst
+   ../Lists/ListDeletion.rst
+   ../Lists/ObjectsandReferences.rst
+   ../Lists/Aliasing.rst
+   ../Lists/CloningLists.rst
+   ../Lists/RepetitionandReferences.rst
+   ../Lists/ListMethods.rst
+   ../Lists/AppendversusConcatenate.rst
+   ../Lists/ListComprehensions.rst
+   ../Lists/NestedLists.rst
+   ../Lists/StringsandLists.rst
+   ../Lists/listTypeConversionFunction.rst

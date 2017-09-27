@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>The Return of L-Systems &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="the-return-of-l-systems">
+<h1>The Return of L-Systems<a class="headerlink" href="#the-return-of-l-systems" title="Permalink to this headline">¶</a></h1>
+<p>Let’s return to the L-systems we introduced in the previous chapter and
+introduce a very interesting new feature that requires the use of lists.</p>
+<p>Suppose we have the following grammar:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">X</span>
+<span class="n">X</span> <span class="o">--&gt;</span> <span class="n">F</span><span class="p">[</span><span class="o">-</span><span class="n">X</span><span class="p">]</span><span class="o">+</span><span class="n">X</span>
+<span class="n">F</span> <span class="o">--&gt;</span> <span class="n">FF</span>
+</pre></div>
+</div>
+<p>This L-system looks very similar to the old L-system except that we’ve added
+one change.  We’ve added the characters ‘[‘ and ‘]’.  The meaning of these
+characters adds a very interesting new dimension to our L-Systems.  The ‘[‘
+character indicates that we want to save the state of our turtle,
+namely its position and its heading so that we can come back to this position
+later.  The ‘]’ tells the turtle to warp to the most recently saved position.
+The way that we will accomplish this is to use lists.  We can save the
+heading and position of the turtle as a list of 3 elements.  <code class="docutils literal"><span class="pre">[heading</span> <span class="pre">x</span>
+<span class="pre">y]</span></code>  The first index position in the list holds the heading,
+the second index position in the list holds the x coordinate,
+and the third index position holds the y coordinate.</p>
+<p>Now, if we create an empty list and every time we see a ‘[‘ we append the
+list that contains <code class="docutils literal"><span class="pre">[heading,</span> <span class="pre">x,</span> <span class="pre">y]</span></code> we create a history of saved places
+the turtle has been where the most recently saved location will always be at
+the end of the list.  When we find a ‘]’ in the string we use the pop
+function to remove the the most recently appended information.</p>
+<p>Let’s modify our <code class="docutils literal"><span class="pre">drawLsystem</span></code> function to begin to implement this new
+behavior.</p>
+
+<div data-childcomponent="list_lsys1" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=list_lsys1 data-lang="python"    data-timelimit=25000   data-audio=''     >
+import turtle
+
+def drawLsystem(aTurtle, instructions, angle, distance):
+    savedInfoList = []
+    for cmd in instructions:
+        if cmd == 'F':
+            aTurtle.forward(distance)
+        elif cmd == 'B':
+            aTurtle.backward(distance)
+        elif cmd == '+':
+            aTurtle.right(angle)
+        elif cmd == '-':
+            aTurtle.left(angle)
+        elif cmd == '[':
+            savedInfoList.append([aTurtle.heading(), aTurtle.xcor(), aTurtle.ycor()])
+            print(savedInfoList)
+        elif cmd == ']':
+            newInfo = savedInfoList.pop()
+            print(newInfo)
+            print(savedInfoList)
+
+t = turtle.Turtle()
+inst = "FF[-F[-X]+X]+F[-X]+X"
+drawLsystem(t, inst, 60, 20)
+</textarea>
+</div>
+<p>When we run this example we can see that the picture is not very interesting,
+but notice what gets printed out, and how the saved information about the
+turtle gets added and removed from the end of the list.  In the next example
+we’ll make use of the information from the list to save and restore the
+turtle’s position and heading when needed.  We’ll use a longer example here
+so you get an idea of what the kind of drawing the L-System can really make.</p>
+
+<div data-childcomponent="list_lsys2" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=list_lsys2 data-lang="python"    data-timelimit=25000   data-audio=''     >
+import turtle
+
+def drawLsystem(aTurtle, instructions, angle, distance):
+    savedInfoList = []
+    for cmd in instructions:
+        if cmd == 'F':
+            aTurtle.forward(distance)
+        elif cmd == 'B':
+            aTurtle.backward(distance)
+        elif cmd == '+':
+            aTurtle.right(angle)
+        elif cmd == '-':
+            aTurtle.left(angle)
+        elif cmd == '[':
+            savedInfoList.append([aTurtle.heading(), aTurtle.xcor(), aTurtle.ycor()])
+            print(savedInfoList)
+        elif cmd == ']':
+            newInfo = savedInfoList.pop()
+            aTurtle.setheading(newInfo[0])
+            aTurtle.setposition(newInfo[1], newInfo[2])
+
+t = turtle.Turtle()
+inst = "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF[-FFFFFFFFFFFFFFFF[-FFFFFFFF[-FFFF[-FF[-F[-X]+X]+F[-X]+X]+FF[-F[-X]+X]+F[-X]+X]+FFFF[-FF[-F[-X]+X]+F[-X]+X]+FF[-F[-X]+X]+F[-X]+X]+FFFFFFFF[-FFFF[-FF[-F[-X]+X]+F[-X]+X]+FF[-F[-X]+X]+F[-X]+X]+FFFF[-FF[-F[-X]+X]+F[-X]+X]+FF[-F[-X]+X]+F[-X]+X]+FFFFFFFFFFFFFFFF[-FFFFFFFF[-FFFF[-FF[-F[-X]+X]+F[-X]+X]+FF[-F[-X]+X]+F[-X]+X]+FFFF[-FF[-F[-X]+X]+F[-X]+X]+FF[-F[-X]+X]+F[-X]+X]+FFFFFFFF[-FFFF[-FF[-F[-X]+X]+F[-X]+X]+FF[-F[-X]+X]+F[-X]+X]+FFFF[-FF[-F[-X]+X]+F[-X]+X]+FF[-F[-X]+X]+F[-X]+X"
+t.setposition(0, -200)
+t.left(90)
+drawLsystem(t, inst, 30, 2)
+</textarea>
+</div>
+<p>Rather than use the <code class="docutils literal"><span class="pre">inst</span></code> string supplied here, use the code from the string
+chapter, and write your own applyRules function to implement this L-system.
+This example only uses 6 expansions.  Try it out with a larger number of
+expansions.  You may also want to try this example with different values for
+the angle and distance parameters.</p>
+</div>
+
+
+  
+      
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

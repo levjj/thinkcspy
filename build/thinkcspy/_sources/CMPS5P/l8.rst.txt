@@ -1,0 +1,18 @@
+More About Iteration
+::::::::::::::::::::
+
+.. toctree::
+   :caption: More About Iteration
+   :maxdepth: 2
+
+   ../MoreAboutIteration/intro-IterationRevisited.rst
+   ../MoreAboutIteration/Theforlooprevisited.rst
+   ../MoreAboutIteration/ThewhileStatement.rst
+   ../MoreAboutIteration/RandomlyWalkingTurtles.rst
+   ../MoreAboutIteration/The3n1Sequence.rst
+   ../MoreAboutIteration/Newton'sMethod.rst
+   ../MoreAboutIteration/accumulatorRevisited.rst
+   ../MoreAboutIteration/SentinelValuesAndValidation.rst
+   ../MoreAboutIteration/AlgorithmsRevisited.rst
+   ../MoreAboutIteration/Glossary.rst
+   ../MoreAboutIteration/Exercises.rst

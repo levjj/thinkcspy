@@ -1,0 +1,16 @@
+Files
+:::::
+
+.. toctree::
+   :caption: Files
+   :maxdepth: 2
+
+   ../Files/intro-WorkingwithDataFiles.rst
+   ../Files/FindingaFileonyourDisk.rst
+   ../Files/ReadingaFile.rst
+   ../Files/Iteratingoverlinesinafile.rst
+   ../Files/AlternativeFileReadingMethods.rst
+   ../Files/WritingTextFiles.rst
+   ../Files/WithStatements.rst
+   ../Files/Glossary.rst
+   ../Files/Exercises.rst

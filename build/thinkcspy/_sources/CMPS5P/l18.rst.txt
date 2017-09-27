@@ -1,0 +1,14 @@
+Dictionaries
+::::::::::::
+
+.. toctree::
+   :caption: Dictionaries
+   :maxdepth: 2
+
+   ../Dictionaries/intro-Dictionaries.rst
+   ../Dictionaries/Dictionaryoperations.rst
+   ../Dictionaries/Dictionarymethods.rst
+   ../Dictionaries/Aliasingandcopying.rst
+   ../Dictionaries/Sparsematrices.rst
+   ../Dictionaries/Glossary.rst
+   ../Dictionaries/Exercises.rst

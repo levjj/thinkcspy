@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>4.3. Precedence of Operators &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.4. Conditional Execution: Binary Selection" href="ConditionalExecutionBinarySelection.html" />
+    <link rel="prev" title="4.2. Logical operators" href="Logicaloperators.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="precedence-of-operators">
+<h1>4.3. Precedence of Operators<a class="headerlink" href="#precedence-of-operators" title="Permalink to this headline">¶</a></h1>
+<p>We have now added a number of additional operators to those we learned in the previous chapters.  It is important to understand how these operators relate to the others with respect to operator precedence.  Python will always evaluate the arithmetic operators first (** is highest, then multiplication/division, then addition/subtraction).  Next comes the relational operators.  Finally, the logical operators are done last.  This means that the expression <code class="docutils literal"><span class="pre">x*5</span> <span class="pre">&gt;=</span> <span class="pre">10</span> <span class="pre">and</span> <span class="pre">y-6</span> <span class="pre">&lt;=</span> <span class="pre">20</span></code> will be evaluated so as to first perform the arithmetic and then check the relationships.  The <code class="docutils literal"><span class="pre">and</span></code> will be done last.  Although many programmers might place parenthesis around the two relational expressions, it is not necessary.</p>
+<p>The following table summarizes the precedence discussed so far from highest to lowest.
+See <a class="reference internal" href="../Appendices/PrecedenceTable.html#operator-summary"><span class="std std-ref">Operator precedence table</span></a> for <em>all</em> the operators introduced in this book.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="39%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Level</th>
+<th class="head">Category</th>
+<th class="head">Operators</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>7(high)</td>
+<td>exponent</td>
+<td>**</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>multiplication</td>
+<td>*,/,//,%</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>addition</td>
+<td>+,-</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>relational</td>
+<td>==,!=,&lt;=,&gt;=,&gt;,&lt;</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>logical</td>
+<td>not</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>logical</td>
+<td>and</td>
+</tr>
+<tr class="row-even"><td>1(low)</td>
+<td>logical</td>
+<td>or</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.</p>
+
+<div data-childcomponent="scratch_06_01" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=scratch_06_01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+
+
+</textarea>
+</div>
+</div>
+<p><strong>Check your understanding</strong></p>
+
+            <div class="runestone">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="test_question6_3_1">
+            select-3-1: Which of the following properly expresses the precedence of operators (using parentheses) in the following expression: 5*3 &gt; 10 and 4+6==11
+            <li data-component="answer" data-correct id="test_question6_3_1_opt_a">((5*3) &gt; 10) and ((4+6) == 11)</li><li data-component="feedback" id="test_question6_3_1_opt_a">Yes, * and + have higher precedence, followed by &gt; and ==, and then the keyword &quot;and&quot;</li>
+            
+            <li data-component="answer"  id="test_question6_3_1_opt_b">(5*(3 &gt; 10)) and (4 + (6 == 11))</li><li data-component="feedback" id="test_question6_3_1_opt_b">Arithmetic operators (*, +) have higher precedence than comparison operators (&gt;, ==)</li>
+            
+            <li data-component="answer"  id="test_question6_3_1_opt_c">((((5*3) &gt; 10) and 4)+6) == 11</li><li data-component="feedback" id="test_question6_3_1_opt_c">This grouping assumes Python simply evaluates from left to right, which is incorrect.  It follows the precedence listed in the table in this section.</li>
+            
+            <li data-component="answer"  id="test_question6_3_1_opt_d">((5*3) &gt; (10 and (4+6))) == 11</li><li data-component="feedback" id="test_question6_3_1_opt_d">This grouping assumes that &quot;and&quot; has a higher precedence than ==, which is not true.</li>
+            
+
+            </ul>
+            </div>
+            <p>Here is an animation for the above expression:</p>
+<div data-childcomponent="showeval" class="runestone explainer alert alert-warning">
+    <button class="btn btn-success" id="se_tq631_nextStep">Next Step</button>
+    <button class="btn btn-default" id ="se_tq631_reset">Reset</button>
+    <div class="evalCont" style="background-color: #FDFDFD;">5 * 3 > 10 and 4 + 6 == 11<br />
+</div>
+    <div class="evalCont" id="se_tq631"></div>
+</div>
+<script>
+    $(document).ready(function() {
+      steps = ['{{5 * 3}}{{15}} > 10 and 4 + 6 == 11', '{{15 > 10}}{{True}} and 4 + 6 == 11', 'True and {{4 + 6}}{{10}} == 11', 'True and {{10 == 11}}{{False}}', '{{True and False}}{{False}}'];
+      se_tq631_object = new SHOWEVAL.ShowEval($('#se_tq631'), steps, true);
+      se_tq631_object.setNextButton('#se_tq631_nextStep');
+      se_tq631_object.setResetButton('#se_tq631_reset');
+    });
+</script>
+<span class="target" id="index-0"></span></div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 4.2. Logical operators' data-toggle="tooltip">
+    <a href="Logicaloperators.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+
+  <li id="relations-next" class="navLink" title='Next Section - 4.4. Conditional Execution: Binary Selection' data-toggle="tooltip" >
+    <a href="ConditionalExecutionBinarySelection.html" style="color:#999">
+      Next Section - 4.4. Conditional Execution: Binary Selection
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <li class="navLink" style="text-align: center" title='4. Booleans and Conditionals' data-toggle="tooltip" >
+    <a href="../CMPS5P/l4.html">
+      <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
+    </a>
+  </li>
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

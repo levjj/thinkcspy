@@ -1,0 +1,13 @@
+Simple Python Data 2
+::::::::::::::::::::
+
+.. toctree::
+   :caption: Simple Python Data 2
+   :maxdepth: 2
+
+   ../SimplePythonData/Input.rst
+   ../SimplePythonData/OrderofOperations.rst
+   ../SimplePythonData/Reassignment.rst
+   ../SimplePythonData/UpdatingVariables.rst
+   ../SimplePythonData/Glossary.rst
+   ../SimplePythonData/Exercises.rst

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>6.5. Flow of Execution of the for Loop &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.6. Iteration Simplifies our Turtle Program" href="IterationSimplifiesourTurtleProgram.html" />
+    <link rel="prev" title="6.4. The for Loop" href="TheforLoop.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="flow-of-execution-of-the-for-loop">
+<span id="index-0"></span><h1>6.5. Flow of Execution of the for Loop<a class="headerlink" href="#flow-of-execution-of-the-for-loop" title="Permalink to this headline">¶</a></h1>
+<p>As a program executes, the interpreter always keeps track of which statement is
+about to be executed.  We call this the <strong>control flow</strong>, or the <strong>flow of
+execution</strong> of the program.  When humans execute programs, they often use their
+finger to point to each statement in turn.  So you could think of control flow
+as “Python’s moving finger”.</p>
+<p>Control flow until now has been strictly top to bottom, one statement at a
+time.  We call this type of control <strong>sequential</strong>.  In Python flow is sequential as long as
+successive statements are indented the <em>same</em> amount.  The <code class="docutils literal"><span class="pre">for</span></code> statement
+introduces indented sub-statements after the for-loop heading.</p>
+<p>Flow of control is often easy to visualize and understand if we draw a flowchart.
+This flowchart shows the exact steps and logic of how the <code class="docutils literal"><span class="pre">for</span></code> statement executes.</p>
+<a class="reference internal image-reference" href="../_images/new_flowchart_for.png"><img alt="../_images/new_flowchart_for.png" class="align-center" src="../_images/new_flowchart_for.png" style="width: 300px;" /></a>
+<p>A codelens demonstration is a good way to help you visualize exactly how the flow of control
+works with the for loop.  Try stepping forward and backward through the program by pressing
+the buttons.  You can see the value of <code class="docutils literal"><span class="pre">name</span></code> change as the loop iterates through the list of friends.</p>
+
+<div class="runestone" style="max-width: none;">
+<div class="alert alert-warning cd_section">
+<div id="vtest"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (vtest)</span> </p>
+</div>
+<script type="text/javascript">
+var vtest_trace = {"code": "for name in [\"Joe\", \"Amy\", \"Brad\", \"Angelina\", \"Zuki\", \"Thandi\", \"Paris\"]:\n    print(\"Hi \", name, \"  Please come to my party on Saturday!\")", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Joe"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Joe"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Amy"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Amy"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Brad"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Brad"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Angelina"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Angelina"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Zuki"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n('Hi ', 'Zuki', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Zuki"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n('Hi ', 'Zuki', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Thandi"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n('Hi ', 'Zuki', '  Please come to my party on Saturday!')\n('Hi ', 'Thandi', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Thandi"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n('Hi ', 'Zuki', '  Please come to my party on Saturday!')\n('Hi ', 'Thandi', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Paris"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n('Hi ', 'Zuki', '  Please come to my party on Saturday!')\n('Hi ', 'Thandi', '  Please come to my party on Saturday!')\n('Hi ', 'Paris', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Paris"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n('Hi ', 'Zuki', '  Please come to my party on Saturday!')\n('Hi ', 'Thandi', '  Please come to my party on Saturday!')\n('Hi ', 'Paris', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Paris"}, "heap": {}, "line": 1, "event": "return"}]};
+var vtest_vis;
+
+$(document).ready(function() {
+    try {
+        vtest_vis = new ExecutionVisualizer('vtest',vtest_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(vtest_vis,'vtest');
+        styleButtons('vtest');
+        allVisualizers.push(vtest_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component vtest_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#vtest_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'vtest'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (vtest_vis) {
+        vtest_vis.redrawConnectors();
+    }
+});
+</script>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 6.4. The <code class="docutils literal"><span class="pre">for</span></code> Loop' data-toggle="tooltip">
+    <a href="TheforLoop.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+
+  <li id="relations-next" class="navLink" title='Next Section - 6.6. Iteration Simplifies our Turtle Program' data-toggle="tooltip" >
+    <a href="IterationSimplifiesourTurtleProgram.html" style="color:#999">
+      Next Section - 6.6. Iteration Simplifies our Turtle Program
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <li class="navLink" style="text-align: center" title='6. For Loops and Turtle Graphics' data-toggle="tooltip" >
+    <a href="../CMPS5P/l6.html">
+      <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
+    </a>
+  </li>
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

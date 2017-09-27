@@ -1,0 +1,14 @@
+Simple Python Data 1
+::::::::::::::::::::
+
+.. toctree::
+   :caption: Simple Python Data
+   :maxdepth: 2
+
+   ../SimplePythonData/intro-VariablesExpressionsandStatements.rst
+   ../SimplePythonData/ValuesandDataTypes.rst
+   ../SimplePythonData/Typeconversionfunctions.rst
+   ../SimplePythonData/Variables.rst
+   ../SimplePythonData/VariableNamesandKeywords.rst
+   ../SimplePythonData/StatementsandExpressions.rst
+   ../SimplePythonData/OperatorsandOperands.rst

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Getting Around The Book &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/showEval.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="getting-around-the-book">
+<span id="quick-help"></span><h1>Getting Around The Book<a class="headerlink" href="#getting-around-the-book" title="Permalink to this headline">¶</a></h1>
+<p>This page will help you learn how to get around this interactive textbook and use the embedded tools.</p>
+<div class="section" id="navigation-bar">
+<h2>Navigation Bar<a class="headerlink" href="#navigation-bar" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/navbar_logo_link.png" class="logo-link-img" src="_images/navbar_logo_link.png" />
+<img alt="_images/navbar_title_link.png" class="title-link-img" src="_images/navbar_title_link.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/navbar_page_dropdown.png" class="page-dropdown-img" src="_images/navbar_page_dropdown.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/navbar_search_dropdown.png" class="search-dropdown-img" src="_images/navbar_search_dropdown.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/navbar_user_dropdown.png" class="user-dropdown-img" src="_images/navbar_user_dropdown.png" />
+</div>
+<div class="section" id="activecode-windows">
+<h2>ActiveCode Windows<a class="headerlink" href="#activecode-windows" title="Permalink to this headline">¶</a></h2>
+<p>One of the most important things that you can do when you are learning a programming language is to write programs.  Unfortunately,
+typical textbooks allow you to read about programming but don’t allow you to practice.  We have created a unique tool called
+<strong>ActiveCode</strong> that allows you to write, modify, and execute programs right
+in the text itself (right from the web browser).  Although this is certainly not the way real programs are written, it provides an excellent
+environment for learning a programming language like Python since you can experiment with the language as you are reading.</p>
+<p>Take a look at the ActiveCode interpreter in action.  If we take a simple Python program and make it active, you will see that it can be executed directly by pressing the <em>Run</em> button.   Try pressing the <em>Run</em> button below.</p>
+
+<div data-childcomponent="nav_codeexample1" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=nav_codeexample1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+print("My first program adds two numbers, 2 and 3:")
+print(2 + 3)
+</textarea>
+</div>
+</div>
+<div class="section" id="the-codelens-tool">
+<h2>The CodeLens Tool<a class="headerlink" href="#the-codelens-tool" title="Permalink to this headline">¶</a></h2>
+<p>In addition to ActiveCode, you can also execute Python code with the assistance of a unique visualization tool.  This tool, known as <strong>CodeLens</strong>, allows you to control the step by step execution of a program.  It also lets you see the values of
+all variables as they are created and modified.  The following example shows CodeLens in action on the same simple program as we saw above.  Remember that in ActiveCode, the source code executes from beginning to end and you can see the final result.  In Codelens you can see and control the step by step progress.  Try clicking on the <em>Forward</em> button below.</p>
+
+<div class="runestone" style="max-width: none;">
+<div class="alert alert-warning cd_section">
+<div id="nav_firstexample_cl"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (nav_firstexample_cl)</span> </p>
+</div>
+<script type="text/javascript">
+var nav_firstexample_cl_trace = {"code": "print(\"My first program adds two numbers, 2 and 3:\")\nprint(2 + 3)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": [], "stdout": "My first program adds two numbers, 2 and 3:\n", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": [], "stdout": "My first program adds two numbers, 2 and 3:\n5\n", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 2, "event": "return"}]};
+var nav_firstexample_cl_vis;
+
+$(document).ready(function() {
+    try {
+        nav_firstexample_cl_vis = new ExecutionVisualizer('nav_firstexample_cl',nav_firstexample_cl_trace,
+                                    {embeddedMode: false,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(nav_firstexample_cl_vis,'nav_firstexample_cl');
+        styleButtons('nav_firstexample_cl');
+        allVisualizers.push(nav_firstexample_cl_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component nav_firstexample_cl_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#nav_firstexample_cl_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'nav_firstexample_cl'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (nav_firstexample_cl_vis) {
+        nav_firstexample_cl_vis.redrawConnectors();
+    }
+});
+</script>
+</div>
+</div>
+<div class="section" id="self-check-questions">
+<h2>Self-Check Questions<a class="headerlink" href="#self-check-questions" title="Permalink to this headline">¶</a></h2>
+<p>Finally, it is also possible to embed simple questions into the text.  These
+questions provide a way for you to check yourselves as you go along.  The questions also provide feedback so that you can
+understand why an answer may or may not be correct.</p>
+<p><strong>Check your understanding</strong></p>
+
+            <div class="runestone">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="nav_question1_1">
+            sc-1-1: What programming language does this site help you to learn?
+            <li data-component="answer" data-correct id="nav_question1_1_opt_a">Python</li><li data-component="feedback" id="nav_question1_1_opt_a">Yes, Python is a great language to learn, whether you are a beginner or an experienced programmer.</li>
+            
+            <li data-component="answer"  id="nav_question1_1_opt_b">Java</li><li data-component="feedback" id="nav_question1_1_opt_b">Java is a good object oriented language but it has some details that make it hard for the beginner.</li>
+            
+            <li data-component="answer"  id="nav_question1_1_opt_c">C</li><li data-component="feedback" id="nav_question1_1_opt_c">C is an imperative programming language that has been around for a long time, but it is not the one that we use.</li>
+            
+            <li data-component="answer"  id="nav_question1_1_opt_d">ML</li><li data-component="feedback" id="nav_question1_1_opt_d">No, ML is a functional programming language.  You can use Python to write functional programs as well.</li>
+            
+
+            </ul>
+            </div>
+            <p>This next type of question allows more than one correct answer to be required.  The feedback will tell you whether you have the
+correct number as well as the feedback for each.</p>
+
+            <div class="runestone">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="nav_question1_2">
+            sc-1-2: Which colors might be found in a rainbow? (choose all that are correct)
+            <li data-component="answer" data-correct id="nav_question1_2_opt_a">red</li><li data-component="feedback" id="nav_question1_2_opt_a">Red is a definitely on of the colors.</li>
+            
+            <li data-component="answer" data-correct id="nav_question1_2_opt_b">yellow</li><li data-component="feedback" id="nav_question1_2_opt_b">Yes, yellow is correct.</li>
+            
+            <li data-component="answer"  id="nav_question1_2_opt_c">black</li><li data-component="feedback" id="nav_question1_2_opt_c">Remember the acronym...ROY G BIV.  B stands for blue.</li>
+            
+            <li data-component="answer" data-correct id="nav_question1_2_opt_d">green</li><li data-component="feedback" id="nav_question1_2_opt_d">Yes, green is one of the colors.</li>
+            
+
+            </ul>
+            </div>
+            <p><strong>Check your understanding</strong></p>
+
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="nav_question1_100_4">
+        <span data-question>sc-1-3: Construct a block of code that correctly implements the accumulator pattern.</span>x = 0
+for i in range(10)
+   x = x + 1
+        </pre>
+        </div>
+    </div>
+<div class="section" id="embedded-videos">
+<h2>Embedded Videos<a class="headerlink" href="#embedded-videos" title="Permalink to this headline">¶</a></h2>
+<p>Our toolset provides a number of different things that will help you to learn to program in the Python programming language.
+Aside from reading the text, it is sometimes useful to hear someone tell you about different aspects of the topic being discussed.
+In order to accomplish this, we provide a way to integrate simple, short videos into the text.  For example, if you click
+on the video shown below, you will hear us talk about the tools that will be described shortly.</p>
+<div id="nav_videoinfo" class="video_popup runestone" >
+<video controls preload="none"  poster="_static/activecodethumb.png">
+    <source src="http://media.interactivepython.org/thinkcsVideos/activecodelens.mov" type="video/mp4"></source>
+    <source src="http://media.interactivepython.org/thinkcsVideos/activecodelens.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      var rb = new RunestoneBase();
+      $('#nav_videoinfo_thumb').click(function(e) {
+         $('#nav_videoinfo').show();
+         $('#nav_videoinfo_thumb').hide();
+         rb.logBookEvent({'event':'video','act':'play','div_id': 'nav_videoinfo'});
+         // Log the run event
+      });
+      $('#nav_videoinfo video').one("click", function(){
+        this.play();
+      });
+      $('#nav_videoinfo video').one("play", function(){
+        rb.logBookEvent({'event':'video','act':'play','div_id': 'nav_videoinfo'});
+      });
+   });
+</script>
+<link href='_static/guiders-1.3.0.css' rel='stylesheet' type='text/css'>
+<script src='_static/guiders-1.3.0.js' type='text/javascript'></script>
+<script src='_static/navhelp.js' type='text/javascript'></script></div>
+</div>
+
+
+  
+      
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

@@ -1,0 +1,17 @@
+Booleans and Conditionals
+:::::::::::::::::::::::::
+
+.. toctree::
+   :caption: Booleans and Conditionals
+   :maxdepth: 2
+
+   ../Selection/BooleanValuesandBooleanExpressions.rst
+   ../Selection/Logicaloperators.rst
+   ../Selection/PrecedenceofOperators.rst
+   ../Selection/ConditionalExecutionBinarySelection.rst
+   ../Selection/OmittingtheelseClauseUnarySelection.rst
+   ../Selection/Nestedconditionals.rst
+   ../Selection/Chainedconditionals.rst
+   ../Selection/BooleanFunctions.rst
+   ../Selection/Glossary.rst
+   ../Selection/Exercises.rst

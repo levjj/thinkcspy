@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>4.8. Boolean Functions &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.9. Glossary" href="Glossary.html" />
+    <link rel="prev" title="4.7. Chained conditionals" href="Chainedconditionals.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="boolean-functions">
+<h1>4.8. Boolean Functions<a class="headerlink" href="#boolean-functions" title="Permalink to this headline">¶</a></h1>
+<p>We have already seen that boolean values result from the evaluation of boolean expressions.  Since the result of any
+expression evaluation can be returned by a function (using the <code class="docutils literal"><span class="pre">return</span></code> statement),
+functions can return boolean values.  This turns out to be a very convenient way to hide the details of complicated tests. For example:</p>
+
+<div data-childcomponent="ch06_boolfun1" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=ch06_boolfun1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def isDivisible(x, y):
+    if x % y == 0:
+        result = True
+    else:
+        result = False
+
+    return result
+
+print(isDivisible(10, 5))
+</textarea>
+</div>
+<p>The name of this function is <code class="docutils literal"><span class="pre">isDivisible</span></code>. It is common to give <strong>boolean
+functions</strong> names that sound like yes/no questions.  <code class="docutils literal"><span class="pre">isDivisible</span></code> returns
+either <code class="docutils literal"><span class="pre">True</span></code> or <code class="docutils literal"><span class="pre">False</span></code> to indicate whether the <code class="docutils literal"><span class="pre">x</span></code> is or is not
+divisible by <code class="docutils literal"><span class="pre">y</span></code>.</p>
+<p>We can make the function more concise by taking advantage of the fact that the
+condition of the <code class="docutils literal"><span class="pre">if</span></code> statement is itself a boolean expression. We can return
+it directly, avoiding the <code class="docutils literal"><span class="pre">if</span></code> statement altogether:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">isDivisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Boolean functions are often used in conditional statements:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">isDivisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="o">...</span> <span class="c1"># do something ...</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="o">...</span> <span class="c1"># do something else ...</span>
+</pre></div>
+</div>
+<p>It might be tempting to write something like
+<code class="docutils literal"><span class="pre">if</span> <span class="pre">isDivisible(x,</span> <span class="pre">y)</span> <span class="pre">==</span> <span class="pre">True:</span></code>
+but the extra comparison is redundant.  You only need an <code class="docutils literal"><span class="pre">==</span></code> expression if you are comparing some other type than boolean. (<code class="docutils literal"><span class="pre">isDivisible(x,</span> <span class="pre">y)</span> <span class="pre">==</span> <span class="pre">False</span></code> can also be made more concise as
+<code class="docutils literal"><span class="pre">not</span> <span class="pre">isDivisible(x,</span> <span class="pre">y)</span></code>). The following example shows the <code class="docutils literal"><span class="pre">isDivisible</span></code> function at work.  Notice how
+descriptive the code is when we move the testing details into a boolean function.  Try it
+with a few other actual parameters to see what is printed.</p>
+
+<div data-childcomponent="ch06_boolfun2" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=ch06_boolfun2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def isDivisible(x, y):
+    return x % y == 0
+
+if isDivisible(10, 5):
+    print("That works")
+else:
+    print("Those values are no good")
+</textarea>
+</div>
+<p>Here is the same program in codelens.  When we evaluate the <code class="docutils literal"><span class="pre">if</span></code> statement in the main part of the program, the evaluation of
+the boolean expression causes a call to the <code class="docutils literal"><span class="pre">isDivisible</span></code> function.  This is very easy to see in codelens.</p>
+
+<div class="runestone" style="max-width: none;">
+<div class="alert alert-warning cd_section">
+<div id="ch06_boolcodelens"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch06_boolcodelens)</span> </p>
+</div>
+<script type="text/javascript">
+var ch06_boolcodelens_trace = {"code": "def isDivisible(x, y):\n    return x % y == 0\n\nif isDivisible(10, 5):\n    print(\"That works\")\nelse:\n    print(\"Those values are no good\")", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["isDivisible"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"isDivisible": ["REF", 1]}, "heap": {"1": ["FUNCTION", "isDivisible(x, y)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["isDivisible"], "stdout": "", "func_name": "isDivisible", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 5, "x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "isDivisible", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "isDivisible_f1", "ordered_varnames": ["x", "y"]}], "globals": {"isDivisible": ["REF", 1]}, "heap": {"1": ["FUNCTION", "isDivisible(x, y)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["isDivisible"], "stdout": "", "func_name": "isDivisible", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 5, "x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "isDivisible", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "isDivisible_f1", "ordered_varnames": ["x", "y"]}], "globals": {"isDivisible": ["REF", 1]}, "heap": {"1": ["FUNCTION", "isDivisible(x, y)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["isDivisible"], "stdout": "", "func_name": "isDivisible", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 5, "x": 10, "__return__": true}, "is_highlighted": true, "is_parent": false, "func_name": "isDivisible", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "isDivisible_f1", "ordered_varnames": ["x", "y", "__return__"]}], "globals": {"isDivisible": ["REF", 1]}, "heap": {"1": ["FUNCTION", "isDivisible(x, y)", null]}, "line": 2, "event": "return"}, {"ordered_globals": ["isDivisible"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"isDivisible": ["REF", 1]}, "heap": {"1": ["FUNCTION", "isDivisible(x, y)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["isDivisible"], "stdout": "That works\n", "func_name": "<module>", "stack_to_render": [], "globals": {"isDivisible": ["REF", 1]}, "heap": {"1": ["FUNCTION", "isDivisible(x, y)", null]}, "line": 5, "event": "return"}]};
+var ch06_boolcodelens_vis;
+
+$(document).ready(function() {
+    try {
+        ch06_boolcodelens_vis = new ExecutionVisualizer('ch06_boolcodelens',ch06_boolcodelens_trace,
+                                    {embeddedMode: false,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(ch06_boolcodelens_vis,'ch06_boolcodelens');
+        styleButtons('ch06_boolcodelens');
+        allVisualizers.push(ch06_boolcodelens_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component ch06_boolcodelens_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#ch06_boolcodelens_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch06_boolcodelens'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (ch06_boolcodelens_vis) {
+        ch06_boolcodelens_vis.redrawConnectors();
+    }
+});
+</script>
+</div>
+<p><strong>Check your understanding</strong></p>
+
+            <div class="runestone">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="test_question6_8_1">
+            select-8-1: What is a Boolean function?
+            <li data-component="answer" data-correct id="test_question6_8_1_opt_a">A function that returns True or False</li><li data-component="feedback" id="test_question6_8_1_opt_a">A Boolean function is just like any other function, but it always returns True or False.</li>
+            
+            <li data-component="answer"  id="test_question6_8_1_opt_b">A function that takes True or False as an argument</li><li data-component="feedback" id="test_question6_8_1_opt_b">A Boolean function may take any number of arguments (including 0, though that is rare), of any type.</li>
+            
+            <li data-component="answer"  id="test_question6_8_1_opt_c">The same as a Boolean expression</li><li data-component="feedback" id="test_question6_8_1_opt_c">A Boolean expression is a statement that evaluates to True or False, e.g. 5+3==8.  A function is a series of expressions grouped together with a name that are only executed when you call the function.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="test_question6_8_2">
+            <p>select-8-2: Is the following statement legal in a Python function (assuming x, y and z are defined to be numbers)?</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">z</span>
+</pre></div>
+</div>
+
+            <li data-component="answer" data-correct id="test_question6_8_2_opt_a">Yes</li><li data-component="feedback" id="test_question6_8_2_opt_a">It is perfectly valid to return the result of evaluating a Boolean expression.</li>
+            
+            <li data-component="answer"  id="test_question6_8_2_opt_b">No</li><li data-component="feedback" id="test_question6_8_2_opt_b">x +y < z is a valid Boolean expression, which will evaluate to True or False.  It is perfectly legal to return True or False from a function, and to have the statement to be evaluated in the same line as the return keyword.</li>
+            
+
+            </ul>
+            </div>
+            <div class="section" id="more-unit-testing">
+<h2>4.8.1. More Unit Testing<a class="headerlink" href="#more-unit-testing" title="Permalink to this headline">¶</a></h2>
+<p>When we write unit tests, we should also consider <strong>output equivalence classes</strong> that result in significantly different results.</p>
+<p>The <code class="docutils literal"><span class="pre">isDivisible</span></code> function can return either <code class="docutils literal"><span class="pre">True</span></code> or <code class="docutils literal"><span class="pre">False</span></code>. These two different outputs give us two equivalence classes. We then choose inputs that should give each of the different results. <strong>It is important to have at least one test for each output equivalence class.</strong></p>
+
+<div data-childcomponent="ch06_boolfun3" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=ch06_boolfun3 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def isDivisible(x, y):
+    '''is x evenly divisible by y?'''
+    return x % y == 0
+
+if __name__ == "__main__":
+    import test
+</textarea>
+</div>
+<div class="admonition-extend-the-program admonition">
+<p class="first admonition-title">Extend the program …</p>
+<p class="last">Starting on line 7, write two unit tests (that should pass), one for each output equivalence class.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.</p>
+
+<div data-childcomponent="scratch_06_03" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=scratch_06_03 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 4.7. Chained conditionals' data-toggle="tooltip">
+    <a href="Chainedconditionals.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+
+  <li id="relations-next" class="navLink" title='Next Section - 4.9. Glossary' data-toggle="tooltip" >
+    <a href="Glossary.html" style="color:#999">
+      Next Section - 4.9. Glossary
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <li class="navLink" style="text-align: center" title='4. Booleans and Conditionals' data-toggle="tooltip" >
+    <a href="../CMPS5P/l4.html">
+      <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
+    </a>
+  </li>
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

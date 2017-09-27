@@ -1,0 +1,16 @@
+Functions 2
+:::::::::::
+
+.. toctree::
+   :caption: Functions 2
+   :maxdepth: 2
+
+   ../Functions/TheAccumulatorPattern.rst
+   ../Functions/Functionscancallotherfunctions.rst
+   ../Functions/FlowofExecutionSummary.rst
+   ../Functions/mainfunction.rst
+   ../Functions/ProgramDevelopment.rst
+   ../Functions/Composition.rst
+   ../Functions/ATurtleBarChart.rst
+   ../Functions/Glossary.rst
+   ../Functions/thinkcspyExercises.rst

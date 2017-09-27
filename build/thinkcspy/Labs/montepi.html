@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Approximating the Value of Pi &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Beyond the Browser" href="pythonshell.html" />
+    <link rel="prev" title="Letter Count Histogram" href="lab12_02.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="approximating-the-value-of-pi">
+<h1>Approximating the Value of Pi<a class="headerlink" href="#approximating-the-value-of-pi" title="Permalink to this headline">¶</a></h1>
+<p>Almost everyone has heard of the famous mathematical constant called <strong>Pi</strong>.  We use it most often to find the circumference or the area of a circle.  For simplicity, the value that is commonly used for pi is 3.14.  However, it turns out that pi is what mathematicians call an <strong>irrational number</strong>, meaning that that it has an infinite, nonrepeating number of decimal digits. The value is</p>
+<p>3.1415926535897932384626433832795028841971693993751058209749445923078164062…</p>
+<p>In this lab, we will approximate the value of pi using a technique known as <strong>Monte Carlo Simulation</strong>.  This means that we will use random numbers to simulate a “game of chance”.  The result of this game will be an approximation for pi.</p>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>The game that we will use for this simulation is “darts”.  We will “randomly” throw a number of darts at a specially configured dartboard.  The set up for our board is shown below.  In the figure, you can see that we have a round dartboard mounted on a square piece of wood.  The dartboard has a radius of one unit.  The piece of wood is exactly two units square so that the round board fits perfectly inside the square.</p>
+<img alt="../_images/dartboards.png" src="../_images/dartboards.png" />
+<p>But how will this help us to approximate pi?  Consider the area of the circular dartboard.  It has a radius of one so
+its area is pi.  The area of the square piece of wood is 4 (2 x 2).  The ratio of the area of the circle to the area of the square is pi/4.  If we throw a whole bunch of darts and let them randomly land on the square piece of wood, some will also land on the dartboard.  The number of darts that land on the dartboard, divided by the number that we throw total, will be in the ratio described above (pi/4).  Multiply by 4 and we have pi.</p>
+</div>
+<div class="section" id="throwing-darts">
+<h2>Throwing Darts<a class="headerlink" href="#throwing-darts" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have our dartboard setup, we can throw darts.  We will assume that we are good enough at throwing darts that we always hit the wood.  However, sometimes the darts will hit the dartboard and sometimes they  will miss.</p>
+<p>Inorder to simulate throwing the darts, we can generate two random numbers between zero and one.  The first will be the “x coordinate” of the dart and the second will be the “y coordinate”.  However, we have a problem.  The coordinates for the dartboard go from -1 to 1.</p>
+<p>How can we turn a random number between 0 to 1 into a random number between -1 and 1?</p>
+<p>The program has been started for you.  You need to fill in the part that will “throw the dart”.  Once you know the x,y coordinate, have the turtle move to that location and make a <code class="docutils literal"><span class="pre">dot</span></code>.  Note that the tail is already up so it will not leave a line.</p>
+
+<div data-childcomponent="piguessstart" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=piguessstart data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+import turtle
+import math
+import random
+
+fred = turtle.Turtle()
+
+wn = turtle.Screen()
+wn.setworldcoordinates(-1,-1,1,1)
+
+fred.up()
+
+numdarts = 10
+for i in range(numdarts):
+    randx = random.random()
+    randy = random.random()
+
+    x =
+    y =
+
+wn.exitonclick()
+</textarea>
+</div>
+</div>
+<div class="section" id="counting-darts">
+<h2>Counting Darts<a class="headerlink" href="#counting-darts" title="Permalink to this headline">¶</a></h2>
+<p>We already know the total number of darts being thrown.  The variable <code class="docutils literal"><span class="pre">numdarts</span></code> keeps this for us.  What we need to figure out is how many darts land in the circle?  Since the circle is centered at (0,0) and it has a radius of 1, the question is really simply a matter of checking to see whether the dart has landed within 1 unit of the center.  Luckily, there is a turtle method called <code class="docutils literal"><span class="pre">distance</span></code> that will return the distance from the turtle to any other position.  It needs the x,y for the other position.</p>
+<p>For example, <code class="docutils literal"><span class="pre">fred.distance(12,5)</span></code> would return the distance from fred’s current position to position (12,5).</p>
+<p>Now we simply need to use this method in a conditional to ask whether fred is within 1 unit from the center.  If so, color the dart <code class="docutils literal"><span class="pre">red</span></code>, otherwise, color it <code class="docutils literal"><span class="pre">blue</span></code>.  Also, if we find that it is in the circle, count it.  Create an accumulator variable, call it <code class="docutils literal"><span class="pre">insideCount</span></code>, initialize it to zero, and then increment it when necessary.  Remember that the increment is a form of the accumulator pattern using reassignment.</p>
+</div>
+<div class="section" id="the-value-of-pi">
+<h2>The Value of Pi<a class="headerlink" href="#the-value-of-pi" title="Permalink to this headline">¶</a></h2>
+<p>After the loop has completed and visualization has been drawn, we still need to actually compute pi and print it.  Use the relationship given above.</p>
+<p>Run your program with larger values of <code class="docutils literal"><span class="pre">numdarts</span></code> to see if the approximation gets better.  If you want to speed things up for large values of <code class="docutils literal"><span class="pre">numdarts</span></code>, set the tracer to be 100 using <code class="docutils literal"><span class="pre">wn.tracer(100)</span></code>.</p>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - Letter Count Histogram' data-toggle="tooltip">
+    <a href="lab12_02.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+
+  <li id="relations-next" class="navLink" title='Next Section - Python Beyond the Browser' data-toggle="tooltip" >
+    <a href="pythonshell.html" style="color:#999">
+      Next Section - Python Beyond the Browser
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

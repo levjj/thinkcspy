@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Plotting a sine Wave &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Debugging" href="../Appendices/errorsAndDebug.html" />
+    <link rel="prev" title="Experimenting With the 3n+1 Sequence" href="sequencelab.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="plotting-a-sine-wave">
+<h1>Plotting a sine Wave<a class="headerlink" href="#plotting-a-sine-wave" title="Permalink to this headline">¶</a></h1>
+<p>Have you ever used a graphing calculator?  You can enter an equation, push a few buttons, and the calculator will draw a line.  In this exercise, we will use our turtle to plot a simple math function, the sine wave.</p>
+<div class="section" id="what-is-the-sine-function">
+<h2>What is the sine function?<a class="headerlink" href="#what-is-the-sine-function" title="Permalink to this headline">¶</a></h2>
+<p>The sine function, sometimes called the sine wave, is a smooth, repetitive oscillation that occurs often in many fields including mathematics, physics, and engineering.  A single repetition is shown below.  Note that the x axis is given in degrees.</p>
+<img alt="../_images/sinpic.png" src="../_images/sinpic.png" />
+<p>For this lab, we will use the math library to generate the values that
+we need.
+To help you understand the sine function, consider the following Python program.
+As you can see, the <code class="docutils literal"><span class="pre">sin</span></code> function from the math library takes a single parameter.  This parameter must be a value
+in “radians” (you may remember this from trigonometry class).  Since most of us are used to stating the size of an angle in “degrees”, the math module provides a function, <code class="docutils literal"><span class="pre">radians</span></code> that will convert from degrees to radians for us.</p>
+
+<div data-childcomponent="sin1" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=sin1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+import math
+
+y = math.sin(math.radians(90))
+print(y)
+</textarea>
+</div>
+<p>The program above shows us that the sine of 90 degrees is 1.  Note that the figure above agrees with that.  Try a few other values, like 0 degrees, 180 degrees, 38 degrees, and so on.  You should be able to match the results up with the picture shown above.</p>
+<p>It might be even more interesting to iterate through a sequence of angles and see the value of the sine function
+change.  Try it for angles between 0 and 180 degrees.  What do you notice about the results?</p>
+
+<div data-childcomponent="sin2" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=sin2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+import math
+
+for angle in range(????):
+    y = math.sin(math.radians(angle))
+    print(y)
+</textarea>
+</div>
+<p>Now try it for some other boundary values, like 270 or 360.</p>
+</div>
+<div class="section" id="making-the-plot">
+<h2>Making the Plot<a class="headerlink" href="#making-the-plot" title="Permalink to this headline">¶</a></h2>
+<p>In order to plot a smooth line, we will use the turtle’s <code class="docutils literal"><span class="pre">goto</span></code> method.  <code class="docutils literal"><span class="pre">goto</span></code> takes two parameters, <code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code>,
+and moves the turtle to that location.  If the tail is down, a line will be drawn from the previous location to the new
+location.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">fred</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Recall that the default turtle screen starts with the turtle in the middle at position (0,0).  You can think of the screen as a piece of graph paper.  The x axis runs horizontally and the y axis runs vertically.  The point where they meet in the middle is (0,0).  Positions to the left of the center have an x value that is negative.  Positions that are below the center have a y value that is negative.</p>
+<img alt="../_images/graphpaper.jpg" src="../_images/graphpaper.jpg" />
+<p>Let’s try the <code class="docutils literal"><span class="pre">goto</span></code> method.  Experiment with the method to make sure you understand the coordinate system of the screen.  Try both positive and negative numbers.</p>
+
+<div data-childcomponent="sinlab1" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=sinlab1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+import math
+import turtle
+
+wn = turtle.Screen()
+wn.bgcolor('lightblue')
+
+fred = turtle.Turtle()
+
+fred.goto(50,60)
+
+wn.exitonclick()
+</textarea>
+</div>
+<p>Now we can put the two previous programs together to complete our plot.  Here is our sequence of steps.</p>
+<ol class="arabic">
+<li><p class="first">Create and set up the turtle and the screen.</p>
+</li>
+<li><p class="first">Iterate the angle from 0 to 360.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Generate the sine value for each angle.</li>
+<li>Move the turtle to that position (leave a line behind).</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>Here is a partial program for you to complete.</p>
+
+<div data-childcomponent="sinlab2" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=sinlab2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+import math
+import turtle
+
+wn = turtle.Screen()
+wn.bgcolor('lightblue')
+
+fred = turtle.Turtle()
+
+#your code here
+
+wn.exitonclick()
+</textarea>
+</div>
+</div>
+<div class="section" id="making-the-plot-better">
+<h2>Making the Plot Better<a class="headerlink" href="#making-the-plot-better" title="Permalink to this headline">¶</a></h2>
+<p>You probably think that the program has errors since it does not draw the picture we expect.  Maybe you think it looks a bit like a line?  What do you think the problem is?  Here is a hint…go back and take a look at the values for the sine function as they were calculated and printed in the earlier example.</p>
+<p>Now can you see the problem?  The value of <code class="docutils literal"><span class="pre">sin</span></code> always stays between -1 and 1.  This does not give our turtle much room to run.</p>
+<p>In order to fix this problem, we need to redesign our “graph paper” so that the coordinates give us more room to plot the values of the sine function.  To do this, we will use a method of the <code class="docutils literal"><span class="pre">Screen</span></code> class called <code class="docutils literal"><span class="pre">setworldcoordinates</span></code>.
+This method allows us to change the range of values on the x and y coordinate system for our turtle.  Take a look at the documentation for the turtle module to see how to use this method (<a class="reference external" href="http://docs.python.org/py3k/py-modindex.html">Global Module Index</a>).  Once you have an understanding of the parameters required to use the method, choose an appropriate coordinate system and retry your solution.</p>
+<div class="admonition-now-try-this admonition">
+<p class="first admonition-title">Now try this…</p>
+<p class="last">Now that you can plot a sine function, how about trying a different function, such as cosine or log?</p>
+</div>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - Experimenting With the 3n+1 Sequence' data-toggle="tooltip">
+    <a href="sequencelab.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+
+  <li id="relations-next" class="navLink" title='Next Section - Debugging' data-toggle="tooltip" >
+    <a href="../Appendices/errorsAndDebug.html" style="color:#999">
+      Next Section - Debugging
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

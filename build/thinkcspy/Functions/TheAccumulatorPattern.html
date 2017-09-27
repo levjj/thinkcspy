@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>14.1. The Accumulator Pattern &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="14.2. Functions can Call Other Functions" href="Functionscancallotherfunctions.html" />
+    <link rel="prev" title="14. Functions 2" href="../CMPS5P/l14.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="the-accumulator-pattern">
+<span id="index-0"></span><h1>14.1. The Accumulator Pattern<a class="headerlink" href="#the-accumulator-pattern" title="Permalink to this headline">¶</a></h1>
+<div id="function_accumulator_pattern" class="video_popup runestone" >
+<video controls preload="none"  poster="../_static/accumulatorpattern.png">
+    <source src="http://media.interactivepython.org/thinkcsVideos/accumulatorpattern.mov" type="video/mp4"></source>
+    <source src="http://media.interactivepython.org/thinkcsVideos/accumulatorpattern.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      var rb = new RunestoneBase();
+      $('#function_accumulator_pattern_thumb').click(function(e) {
+         $('#function_accumulator_pattern').show();
+         $('#function_accumulator_pattern_thumb').hide();
+         rb.logBookEvent({'event':'video','act':'play','div_id': 'function_accumulator_pattern'});
+         // Log the run event
+      });
+      $('#function_accumulator_pattern video').one("click", function(){
+        this.play();
+      });
+      $('#function_accumulator_pattern video').one("play", function(){
+        rb.logBookEvent({'event':'video','act':'play','div_id': 'function_accumulator_pattern'});
+      });
+   });
+</script>
+<p>In the previous example, we wrote a function that computes the square of a number.  The algorithm we used
+in the function was simple: multiply the number by itself.
+In this section we will reimplement the square function and use a different algorithm, one that relies on addition instead
+of multiplication.</p>
+<p>If you want to multiply two numbers together, the most basic approach is to think of it as repeating the process of
+adding one number to itself.  The number of repetitions is where the second number comes into play.  For example, if we
+wanted to multiply three and five, we could think about it as adding three to itself five times.  Three plus three is six, plus three is nine, plus three is 12, and finally plus three is 15.  Generalizing this, if we want to implement
+the idea of squaring a number, call it <cite>n</cite>, we would add <cite>n</cite> to itself <cite>n</cite> times.</p>
+<p>Do this by hand first and try to isolate exactly what steps you take.  You’ll
+find you need to keep some “running total” of the sum so far, either on a piece
+of paper, or in your head.  Remembering things from one step to the next is
+precisely why we have variables in a program.  This means that we will need some variable
+to remember the “running total”.  It should be initialized with a value of zero.  Then, we need to <strong>update</strong> the “running total” the correct number of times.  For each repetition, we’ll want
+to update the running total by adding the number to it.</p>
+<p>In words we could say it this way.  To square the value of <cite>n</cite>, we will repeat the process of updating a running total <cite>n</cite> times.  To update the running total, we take the old value of the “running total” and add <cite>n</cite>.  That sum becomes the new
+value of the “running total”.</p>
+<p>Here is the program in activecode.  Note that the heading of the function definition is the same as it was before.  All that has changed
+is the details of how the squaring is done.  This is a great example of “black box” design.  We can change out the details inside of the box and still use the function exactly as we did before.</p>
+
+<div data-childcomponent="sq_accum1" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=sq_accum1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def square(x):
+    runningtotal = 0
+    for counter in range(x):
+        runningtotal = runningtotal + x
+
+    return runningtotal
+
+toSquare = 10
+squareResult = square(toSquare)
+print("The result of", toSquare, "squared is", squareResult)
+</textarea>
+</div>
+<p>In the program above, notice that the variable <code class="docutils literal"><span class="pre">runningtotal</span></code> starts out with a value of 0.  Next, the iteration is performed <code class="docutils literal"><span class="pre">x</span></code> times.  Inside the for loop, the update occurs. <code class="docutils literal"><span class="pre">runningtotal</span></code> is reassigned a new value which is the old value plus the value of <code class="docutils literal"><span class="pre">x</span></code>.</p>
+<p>This pattern of iterating the updating of a variable is commonly
+referred to as the <strong>accumulator pattern</strong>.  We refer to the variable as the <strong>accumulator</strong>.  This pattern will come up over and over again.  Remember that the key
+to making it work successfully is to be sure to initialize the variable before you start the iteration.
+Once inside the iteration, it is required that you update the accumulator.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">What would happen if we put the assignment <code class="docutils literal"><span class="pre">runningTotal</span> <span class="pre">=</span> <span class="pre">0</span></code> inside
+the for statement?  Not sure? Try it and find out.</p>
+</div>
+<p>Here is the same program in codelens.  Step through the function and watch the “running total” accumulate the result.</p>
+
+<div class="runestone" style="max-width: none;">
+<div class="alert alert-warning cd_section">
+<div id="sq_accum3"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (sq_accum3)</span> </p>
+</div>
+<script type="text/javascript">
+var sq_accum3_trace = {"code": "def square(x):\n    runningtotal = 0\n    for counter in range(x):\n        runningtotal = runningtotal + x\n\n    return runningtotal\n\ntoSquare = 10\nsquareResult = square(toSquare)\nprint(\"The result of\", toSquare, \"squared is\", squareResult)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["square"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "runningtotal": 0}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 0, "runningtotal": 0}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 0, "runningtotal": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 1, "runningtotal": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 1, "runningtotal": 20}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 2, "runningtotal": 20}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 2, "runningtotal": 30}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 3, "runningtotal": 30}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 3, "runningtotal": 40}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 4, "runningtotal": 40}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 4, "runningtotal": 50}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 5, "runningtotal": 50}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 5, "runningtotal": 60}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 6, "runningtotal": 60}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 6, "runningtotal": 70}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 7, "runningtotal": 70}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 7, "runningtotal": 80}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 8, "runningtotal": 80}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 8, "runningtotal": 90}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 9, "runningtotal": 90}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 9, "runningtotal": 100}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10, "counter": 9, "runningtotal": 100}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"__return__": 100, "x": 10, "counter": 9, "runningtotal": 100}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "runningtotal", "counter", "__return__"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 6, "event": "return"}, {"ordered_globals": ["square", "toSquare", "squareResult"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "squareResult": 100, "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["square", "toSquare", "squareResult"], "stdout": "('The result of', 10, 'squared is', 100)\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "squareResult": 100, "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 10, "event": "return"}]};
+var sq_accum3_vis;
+
+$(document).ready(function() {
+    try {
+        sq_accum3_vis = new ExecutionVisualizer('sq_accum3',sq_accum3_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(sq_accum3_vis,'sq_accum3');
+        styleButtons('sq_accum3');
+        allVisualizers.push(sq_accum3_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component sq_accum3_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#sq_accum3_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'sq_accum3'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (sq_accum3_vis) {
+        sq_accum3_vis.redrawConnectors();
+    }
+});
+</script>
+</div>
+<div class="section" id="the-general-accumulator-pattern">
+<h2>14.1.1. The General Accumulator Pattern<a class="headerlink" href="#the-general-accumulator-pattern" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">initialize</span> <span class="n">the</span> <span class="n">accumulator</span> <span class="n">variable</span>
+<span class="n">repeat</span><span class="p">:</span>
+    <span class="n">modify</span> <span class="n">the</span> <span class="n">accumulator</span> <span class="n">variable</span>
+
+<span class="c1"># when the loop terminates the accumulator has the correct value</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.</p>
+
+<div data-childcomponent="scratch_05_04" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=scratch_05_04 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+
+
+</textarea>
+</div>
+</div>
+<p><strong>Check your understanding</strong></p>
+
+            <div class="runestone">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="test_question5_4_1">
+            <p>func-4-1: Consider the following code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">runningtotal</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">counter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="n">runningtotal</span> <span class="o">=</span> <span class="n">runningtotal</span> <span class="o">+</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">runningtotal</span>
+</pre></div>
+</div>
+<p>What happens if you put the initialization of runningtotal (the
+line runningtotal = 0) inside the for loop as the first
+instruction in the loop?</p>
+
+            <li data-component="answer" data-correct id="test_question5_4_1_opt_a">The square function will return x instead of x * x</li><li data-component="feedback" id="test_question5_4_1_opt_a">The variable runningtotal will be reset to 0 each time through the loop.   However because this assignment happens as the first instruction, the next instruction in the loop will set it back to x.   When the loop finishes, it will have the value x, which is what is returned.</li>
+            
+            <li data-component="answer"  id="test_question5_4_1_opt_b">The square function will cause an error</li><li data-component="feedback" id="test_question5_4_1_opt_b">Assignment statements are perfectly legal inside loops and will not cause an error.</li>
+            
+            <li data-component="answer"  id="test_question5_4_1_opt_c">The square function will work as expected and return x * x</li><li data-component="feedback" id="test_question5_4_1_opt_c">By putting the statement that sets runningtotal to 0 inside the loop, that statement gets executed every time through the loop, instead of once before the loop begins.  The result is that runningtotal is 'cleared' (reset to 0) each time through the loop.</li>
+            
+            <li data-component="answer"  id="test_question5_4_1_opt_d">The square function will return 0 instead of x * x</li><li data-component="feedback" id="test_question5_4_1_opt_d">The line runningtotal = 0 is the first line in the for loop, but immediately after this line, the line runningtotal = runningtotal + x will execute, giving runningtotal a non-zero value  (assuming x is non-zero).</li>
+            
+
+            </ul>
+            </div>
+            
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="question5_4_1p">
+        <span data-question>func-4-2: Rearrange the code statements so that the program will add up the first n odd numbers where n is provided by the user.</span>n = int(input('How many odd numbers would
+you like to add together?'))
+thesum = 0
+oddnumber = 1
+---
+for counter in range(n):
+---
+   thesum = thesum + oddnumber
+   oddnumber = oddnumber + 2
+---
+print(thesum)
+        </pre>
+        </div>
+    </div>
+<div class="section" id="a-variation-on-the-accumulator-pattern">
+<h2>14.1.2. A Variation on the Accumulator Pattern<a class="headerlink" href="#a-variation-on-the-accumulator-pattern" title="Permalink to this headline">¶</a></h2>
+
+<div data-childcomponent="ch04_accum3" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=ch04_accum3 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def square(x):
+    '''raise x to the second power'''
+    runningtotal = 0
+    for counter in range(x):
+        runningtotal = runningtotal + x
+
+    return runningtotal
+
+toSquare = 10
+squareResult = square(toSquare)
+print("The result of", toSquare, "squared is", squareResult)
+</textarea>
+</div>
+<div class="admonition-modify-the-program admonition">
+<p class="first admonition-title">Modify the program …</p>
+<p>Change the value of <code class="docutils literal"><span class="pre">toSquare</span></code> in line 9 to <code class="docutils literal"><span class="pre">-10</span></code> and run.</p>
+<p>We now see that our function has a semantic error. Remember when we first introduced the square function, unit testing and equivalence classes?</p>
+<p>Change the value of <code class="docutils literal"><span class="pre">toSquare</span></code> in line 9 back to <code class="docutils literal"><span class="pre">10</span></code> and run.</p>
+<p>What would happen if we change <code class="docutils literal"><span class="pre">runningtotal</span> <span class="pre">=</span> <span class="pre">runningtotal</span> <span class="pre">+</span> <span class="pre">x</span></code> to use <strong>multiplication</strong> instead of addition?  Make this change to the program and look at the output.</p>
+<p>It is very important to properly initialize the accumulator variable. Do a web search on <code class="docutils literal"><span class="pre">additive</span> <span class="pre">identity</span></code> and <code class="docutils literal"><span class="pre">multiplicative</span> <span class="pre">identity</span></code>. <strong>Properly initialize the accumulator variable</strong> and run the program.</p>
+<p>Now we get an answer other than 0. However, the answer is not the square of of <code class="docutils literal"><span class="pre">x</span></code>. It is also important that the loop repeat the proper number of times. How many times do we need to execute line 5 to get the square of <code class="docutils literal"><span class="pre">x</span></code>? <strong>Change line 4 to repeat the correct number of times</strong>. Now the program should produce the correct result.</p>
+<p>Change the value of <code class="docutils literal"><span class="pre">toSquare</span></code> in line 9 to <code class="docutils literal"><span class="pre">-10</span></code> and run. Now negative inputs also work!</p>
+<p class="last">Remember that the boundary between our equivalence classes is 0. Try that value for <code class="docutils literal"><span class="pre">toSquare</span></code> also.</p>
+</div>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - 14. Functions 2' data-toggle="tooltip">
+    <a href="../CMPS5P/l14.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+
+  <li id="relations-next" class="navLink" title='Next Section - 14.2. Functions can Call Other Functions' data-toggle="tooltip" >
+    <a href="Functionscancallotherfunctions.html" style="color:#999">
+      Next Section - 14.2. Functions can Call Other Functions
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <li class="navLink" style="text-align: center" title='14. Functions 2' data-toggle="tooltip" >
+    <a href="../CMPS5P/l14.html">
+      <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
+    </a>
+  </li>
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

@@ -1,0 +1,15 @@
+Recursion
+:::::::::
+
+.. toctree::
+   :caption: Recursion
+   :maxdepth: 2
+
+   ../IntroRecursion/WhatIsRecursion.rst
+   ../IntroRecursion/CalculatingtheSumofaListofNumbers.rst
+   ../IntroRecursion/TheThreeLawsofRecursion.rst
+   ../IntroRecursion/ConvertinganIntegertoaStringinAnyBase.rst
+   ../IntroRecursion/intro-VisualizingRecursion.rst
+   ../IntroRecursion/SierpinskiTriangle.rst
+   ../IntroRecursion/Glossary.rst
+   ../IntroRecursion/ProgrammingExercises.rst

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sameness &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/showEval.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "4.0.1";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.runestone_version = '3.0.5';
+</script>
+<style>
+.navLink{
+	display: block;
+  position: static;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    /* Styling definitions for chevron function in bookfuncs.js */
+	.navLink{
+		display: block;
+	}
+}
+
+#relations-next {
+  float: right;
+}
+
+#relations-prev {
+  float: left;
+}
+
+.navLink a {
+	color: #999;
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="sameness">
+<span id="index-0"></span><h1>Sameness<a class="headerlink" href="#sameness" title="Permalink to this headline">¶</a></h1>
+<p>The meaning of the word <em>same</em> seems perfectly clear until you give it some
+thought and then you realize there is more to it than you expected.</p>
+<p>For example, if you say, Chris and I have the same car, you mean that his car
+and yours are the same make and model, but that they are two different cars. If
+you say, Chris and I have the same mother, you mean that his mother and yours
+are the same person.</p>
+<p>When you talk about objects, there is a similar ambiguity. For example, if two
+<code class="docutils literal"><span class="pre">Fraction</span></code>s are the same, does that mean they represent the same rational number
+or that they are actually the same object?</p>
+<p>We’ve already seen the <code class="docutils literal"><span class="pre">is</span></code> operator in the chapter on lists, where we
+talked about aliases.
+It allows us to find out if two references refer to the same object.</p>
+
+<div data-childcomponent="fractions_is" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=fractions_is data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+class Fraction:
+
+    def __init__(self, top, bottom):
+
+        self.num = top        # the numerator is on top
+        self.den = bottom     # the denominator is on the bottom
+
+    def __str__(self):
+        return str(self.num) + "/" + str(self.den)
+
+
+myfraction = Fraction(3, 4)
+yourfraction = Fraction(3, 4)
+print(myfraction is yourfraction)
+
+ourfraction = myfraction
+print(myfraction is ourfraction)
+</textarea>
+</div>
+<p>Even though <code class="docutils literal"><span class="pre">myfraction</span></code> and <code class="docutils literal"><span class="pre">yourfraction</span></code> refer to the same rational number, they are not the same object.</p>
+<img alt="../_images/fractionpic2.png" src="../_images/fractionpic2.png" />
+<p>If we assign <code class="docutils literal"><span class="pre">myfraction</span></code> to <code class="docutils literal"><span class="pre">ourfraction</span></code>, then the two variables are aliases
+of the same object.</p>
+<img alt="../_images/fractionpic3.png" src="../_images/fractionpic3.png" />
+<p>This type of equality is called <strong>shallow equality</strong> because it compares only
+the references, not the contents of the objects.  Using the == operator to check equality between two user
+defined objects
+will return the shallow equality result.  In other words, the <code class="docutils literal"><span class="pre">Fraction</span></code> objects are equal (==) if they are the same object.</p>
+<p>Of course, we could define equality to mean the fractions are the same in that they represent the same
+rational number.  Recall from algebra that a/b = c/d is equivalent to a*d = b*c.
+Here is a boolean function that performs this check.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sameRational</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f1</span><span class="o">.</span><span class="n">getNum</span><span class="p">()</span><span class="o">*</span><span class="n">f2</span><span class="o">.</span><span class="n">getDen</span><span class="p">()</span> <span class="o">==</span> <span class="n">f2</span><span class="o">.</span><span class="n">getNum</span><span class="p">()</span> <span class="o">*</span> <span class="n">f1</span><span class="o">.</span><span class="n">getDen</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This type of equality is known as <strong>deep equality</strong> since it compares the values “deep” in the object, not just the reference to the object.</p>
+
+<div data-childcomponent="fractions_eq1" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=fractions_eq1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def sameRational(f1, f2):
+    return f1.getNum()*f2.getDen() == f2.getNum() * f1.getDen()
+
+class Fraction:
+
+    def __init__(self, top, bottom):
+
+        self.num = top        # the numerator is on top
+        self.den = bottom     # the denominator is on the bottom
+
+    def __str__(self):
+        return str(self.num) + "/" + str(self.den)
+
+    def getNum(self):
+        return self.num
+
+    def getDen(self):
+        return self.den
+
+
+myfraction = Fraction(3, 4)
+yourfraction = Fraction(3, 4)
+print(myfraction is yourfraction)
+print(sameRational(myfraction, yourfraction))
+notInLowestTerms = Fraction(15, 20)
+print(sameRational(myfraction, notInLowestTerms))
+</textarea>
+</div>
+<p>Of course, if the two variables refer to the same object, they have both
+shallow and deep equality.</p>
+<div class="admonition-beware-of admonition">
+<p class="first admonition-title">Beware of  ==</p>
+<p>“When I use a word,” Humpty Dumpty said, in a rather scornful tone, “it means just what I choose it to mean — neither more nor less.”   <em>Alice in Wonderland</em></p>
+<p>Python has a powerful feature that allows a designer of a class to decide what an operation
+like <code class="docutils literal"><span class="pre">==</span></code> or <code class="docutils literal"><span class="pre">&lt;</span></code> should mean.  (We’ve just shown how we can control how our own objects
+are converted to strings, so we’ve already made a start!)  We’ll cover more detail later.
+But sometimes the implementors will attach shallow equality semantics, and
+sometimes deep equality, as shown in this little experiment:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;== on Points returns&quot;</span><span class="p">,</span> <span class="n">p</span> <span class="o">==</span> <span class="n">s</span><span class="p">)</span>  <span class="c1"># by default, == does a shallow equality test here</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;== on lists returns&quot;</span><span class="p">,</span>  <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># by default, == does a deep equality test on lists</span>
+</pre></div>
+</div>
+<p>This outputs:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">==</span> <span class="n">on</span> <span class="n">Points</span> <span class="n">returns</span> <span class="kc">False</span>
+<span class="o">==</span> <span class="n">on</span> <span class="n">lists</span> <span class="n">returns</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p class="last">So we conclude that even though the two lists (or tuples, etc.) are distinct objects
+with different memory addresses, in one case the <code class="docutils literal"><span class="pre">==</span></code> operator tests for deep equality,
+while in the case of points it makes a shallow test.</p>
+</div>
+</div>
+
+
+  
+      
+
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<p style="line-height: 2em">&nbsp;</p>
+
+  </body>
+</html>

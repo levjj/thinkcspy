@@ -1,0 +1,14 @@
+Debugging Interlude
+:::::::::::::::::::
+
+.. toctree::
+   :caption: Debugging Interlude
+   :maxdepth: 2
+
+   ../Debugging/intro-HowtobeaSuccessfulProgrammer.rst
+   ../Debugging/HowtoAvoidDebugging.rst
+   ../Debugging/BeginningtipsforDebugging.rst
+   ../Debugging/KnowyourerrorMessages.rst
+   ../Debugging/ProgrammingWithStyle.rst
+   ../Debugging/Summary.rst
+   ../Debugging/Exercises.rst
