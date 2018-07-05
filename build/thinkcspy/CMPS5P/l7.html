@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>7. Image Processing with Nested Loops &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <title>7. Lists &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -93,8 +93,8 @@
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.1. 2-Dimensional Iteration: Image Processing" href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html" />
-    <link rel="prev" title="6.11. Exercises" href="../PythonTurtle/Exercises.html" />
+    <link rel="next" title="7.1. Lists" href="../Lists/intro-Lists.html" />
+    <link rel="prev" title="6.22. Exercises" href="../Strings/Exercises.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -151,17 +151,31 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="image-processing-with-nested-loops">
-<h1>7. Image Processing with Nested Loops<a class="headerlink" href="#image-processing-with-nested-loops" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lists">
+<h1>7. Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Image Processing with Nested Loops</span></p>
+<p class="caption"><span class="caption-text">Lists</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html">7.1. 2-Dimensional Iteration: Image Processing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html#the-rgb-color-model">7.1.1. The RGB Color Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html#image-objects">7.1.2. Image Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html#image-processing-and-nested-iteration">7.1.3. Image Processing and Nested Iteration</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/intro-Lists.html">7.1. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/ListValues.html">7.2. List Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/ListLength.html">7.3. List Length</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/AccessingElements.html">7.4. Accessing Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/ListMembership.html">7.5. List Membership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/ConcatenationandRepetition.html">7.6. Concatenation and Repetition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/ListSlices.html">7.7. List Slices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/Listsandforloops.html">7.8. Lists and <code class="docutils literal"><span class="pre">for</span></code> loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/ListsareMutable.html">7.9. Lists are Mutable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/ListDeletion.html">7.10. List Deletion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/ObjectsandReferences.html">7.11. Objects and References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/Aliasing.html">7.12. Aliasing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/CloningLists.html">7.13. Cloning Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/RepetitionandReferences.html">7.14. Repetition and References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/ListMethods.html">7.15. List Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/AppendversusConcatenate.html">7.16. Append versus Concatenate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/ListComprehensions.html">7.17. List Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/NestedLists.html">7.18. Nested Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/StringsandLists.html">7.19. Strings and Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lists/listTypeConversionFunction.html">7.20. <code class="docutils literal"><span class="pre">list</span></code> Type Conversion Function</a></li>
 </ul>
 </div>
 </div>
@@ -169,9 +183,9 @@
 
   
       
-  <li id="relations-next" class="navLink" title='Next Section - 7.1. 2-Dimensional Iteration: Image Processing' data-toggle="tooltip" >
-    <a href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html" style="color:#999">
-      Next Section - 7.1. 2-Dimensional Iteration: Image Processing
+  <li id="relations-next" class="navLink" title='Next Section - 7.1. Lists' data-toggle="tooltip" >
+    <a href="../Lists/intro-Lists.html" style="color:#999">
+      Next Section - 7.1. Lists
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>

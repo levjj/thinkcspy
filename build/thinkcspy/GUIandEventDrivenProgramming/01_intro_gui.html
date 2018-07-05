@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>20.1. Graphical User Interfaces &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <title>16.2. Graphical User Interfaces &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -93,8 +93,8 @@
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="20.8. Tkinter Standard Dialog Boxes" href="02_standard_dialog_boxes.html" />
-    <link rel="prev" title="20. GUI and Event Driven Programming" href="../CMPS5P/l20.html" />
+    <link rel="next" title="16.9. Tkinter Standard Dialog Boxes" href="02_standard_dialog_boxes.html" />
+    <link rel="prev" title="16.1. 2-Dimensional Iteration: Image Processing" href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -152,7 +152,7 @@
 <div class="container" id="main-content">
   
   <div class="section" id="graphical-user-interfaces">
-<h1>20.1. Graphical User Interfaces<a class="headerlink" href="#graphical-user-interfaces" title="Permalink to this headline">¶</a></h1>
+<h1>16.2. Graphical User Interfaces<a class="headerlink" href="#graphical-user-interfaces" title="Permalink to this headline">¶</a></h1>
 <p>A <strong>graphical user interface</strong> (GUI) allows a user
 to interact with a computer program using a pointing device that manipulates
 small pictures on a computer screen. The small pictures are called <code class="docutils literal"><span class="pre">icons</span></code> or
@@ -173,7 +173,7 @@ chooses. This style of programming is called “event driven programming.”
 In fact, by definition, all <em>GUI programs</em> are <em>event-driven programs</em>.</p>
 </div>
 <div class="section" id="gui-programming">
-<h1>20.2. GUI Programming<a class="headerlink" href="#gui-programming" title="Permalink to this headline">¶</a></h1>
+<h1>16.3. GUI Programming<a class="headerlink" href="#gui-programming" title="Permalink to this headline">¶</a></h1>
 <p>An GUI program has the following structure:</p>
 <ul class="simple">
 <li>Create the icons and widgets that are displayed to a user and organize
@@ -217,7 +217,7 @@ in a few lessons. First, let’s learn how to create a <em>GUI interface</em> wh
 the <code class="docutils literal"><span class="pre">widgets</span></code> a user sees when a GUI program runs.</p>
 </div>
 <div class="section" id="gui-programming-options">
-<h1>20.3. GUI Programming Options<a class="headerlink" href="#gui-programming-options" title="Permalink to this headline">¶</a></h1>
+<h1>16.4. GUI Programming Options<a class="headerlink" href="#gui-programming-options" title="Permalink to this headline">¶</a></h1>
 <p>Python does not implement GUI, event-driven-programming in its core
 functionality. GUI programming is implemented using imported modules which
 are often referred to as “toolkits.” Anyone can implement external modules
@@ -229,21 +229,21 @@ understand how GUI programming works, you should be able to learn
 how to use any of the other available toolkits without much difficulty.</p>
 </div>
 <div class="section" id="tkinter">
-<h1>20.4. TKinter<a class="headerlink" href="#tkinter" title="Permalink to this headline">¶</a></h1>
+<h1>16.5. TKinter<a class="headerlink" href="#tkinter" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal"><span class="pre">TKinter</span></code> is an abbreviation for “TK interface”. “TK” is a platform independent,
 customizable, and configurable GUI library. The Python module <code class="docutils literal"><span class="pre">TKinter</span></code>
 allows Python programs to use the TK libraries. An overview of TK can be
 found at <a class="reference external" href="https://en.wikipedia.org/wiki/Tk_(software)_">https://en.wikipedia.org/wiki/Tk_(software)_</a></p>
 </div>
 <div class="section" id="tkinter-pre-programmed-interfaces">
-<h1>20.5. Tkinter Pre-programmed Interfaces<a class="headerlink" href="#tkinter-pre-programmed-interfaces" title="Permalink to this headline">¶</a></h1>
+<h1>16.6. Tkinter Pre-programmed Interfaces<a class="headerlink" href="#tkinter-pre-programmed-interfaces" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal"><span class="pre">Tkinter</span></code> provides a set of standard GUI dialog boxes that can be used with
 minimal programming. These are described in the next lesson.
 (A <em>dialog box</em> is a small window on a computer screen
 in which a user is prompted to provide information or select commands.)</p>
 </div>
 <div class="section" id="tkinter-custom-interfaces">
-<h1>20.6. Tkinter Custom Interfaces<a class="headerlink" href="#tkinter-custom-interfaces" title="Permalink to this headline">¶</a></h1>
+<h1>16.7. Tkinter Custom Interfaces<a class="headerlink" href="#tkinter-custom-interfaces" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal"><span class="pre">Tkinter</span></code> also provides the functionality to create any user interface
 imaginable. To create a custom GUI program you basically do five things:</p>
 <ul class="simple">
@@ -258,7 +258,7 @@ imaginable. To create a custom GUI program you basically do five things:</p>
 or greater.</p>
 </div>
 <div class="section" id="hello-world">
-<h1>20.7. Hello World<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h1>
+<h1>16.8. Hello World<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h1>
 <p>Many programming languages are introduced to new users by showing them how
 to display “Hello world!” on the screen. This is considered to be the
 simplest possible program you can write in the language. In that spirit,
@@ -282,20 +282,20 @@ here is a GUI program that displays “Hello World!:</p>
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - 20. GUI and Event Driven Programming' data-toggle="tooltip">
-    <a href="../CMPS5P/l20.html" >
+  <li id="relations-prev" class="navLink" title='Previous Section - 16.1. 2-Dimensional Iteration: Image Processing' data-toggle="tooltip">
+    <a href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
 
-  <li id="relations-next" class="navLink" title='Next Section - 20.8. Tkinter Standard Dialog Boxes' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - 16.9. Tkinter Standard Dialog Boxes' data-toggle="tooltip" >
     <a href="02_standard_dialog_boxes.html" style="color:#999">
-      Next Section - 20.8. Tkinter Standard Dialog Boxes
+      Next Section - 16.9. Tkinter Standard Dialog Boxes
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <li class="navLink" style="text-align: center" title='20. GUI and Event Driven Programming' data-toggle="tooltip" >
-    <a href="../CMPS5P/l20.html">
+  <li class="navLink" style="text-align: center" title='16. Image Processing with Nested Loops and GUI Programming' data-toggle="tooltip" >
+    <a href="../CMPS5P/l16.html">
       <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
     </a>
   </li>

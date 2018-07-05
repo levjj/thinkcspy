@@ -1,11 +1,15 @@
-Functions 1
-:::::::::::
+Recursion
+:::::::::
 
 .. toctree::
-   :caption: Functions 1
+   :caption: Recursion
    :maxdepth: 2
 
-   ../Functions/functions.rst
-   ../Functions/Functionsthatreturnvalues.rst
-   ../Functions/UnitTesting.rst
-   ../Functions/Variablesandparametersarelocal.rst
+   ../IntroRecursion/WhatIsRecursion.rst
+   ../IntroRecursion/CalculatingtheSumofaListofNumbers.rst
+   ../IntroRecursion/TheThreeLawsofRecursion.rst
+   ../IntroRecursion/ConvertinganIntegertoaStringinAnyBase.rst
+   ../IntroRecursion/intro-VisualizingRecursion.rst
+   ../IntroRecursion/SierpinskiTriangle.rst
+   ../IntroRecursion/Glossary.rst
+   ../IntroRecursion/ProgrammingExercises.rst

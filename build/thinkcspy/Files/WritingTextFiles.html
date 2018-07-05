@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>21.6. Writing Text Files &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <title>17.6. Writing Text Files &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -93,8 +93,8 @@
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="21.7. With Statements" href="WithStatements.html" />
-    <link rel="prev" title="21.5. Alternative File Reading Methods" href="AlternativeFileReadingMethods.html" />
+    <link rel="next" title="17.7. With Statements" href="WithStatements.html" />
+    <link rel="prev" title="17.5. Alternative File Reading Methods" href="AlternativeFileReadingMethods.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -152,7 +152,7 @@
 <div class="container" id="main-content">
   
   <div class="section" id="writing-text-files">
-<h1>21.6. Writing Text Files<a class="headerlink" href="#writing-text-files" title="Permalink to this headline">¶</a></h1>
+<h1>17.6. Writing Text Files<a class="headerlink" href="#writing-text-files" title="Permalink to this headline">¶</a></h1>
 <p>One of the most commonly performed data processing tasks is to read data from a file, manipulate it in some way, and then write the resulting data out to a new data file to be used for other purposes later.  To accomplish this, the <code class="docutils literal"><span class="pre">open</span></code> function discussed above can also be used to create a new file prepared for writing.  Note in <a class="reference internal" href="intro-WorkingwithDataFiles.html#filemethods1a"><span class="std std-ref">Table 1</span></a> above that the only difference between opening a file for writing and  opening a file for reading is the use of the <code class="docutils literal"><span class="pre">'w'</span></code> flag instead of the <code class="docutils literal"><span class="pre">'r'</span></code> flag as the second parameter.  When we open a file for writing, a new, empty file with that name is created and made ready to accept our data. As before, the function returns a reference to the new file object.</p>
 <p><a class="reference internal" href="AlternativeFileReadingMethods.html#filemethods2a"><span class="std std-ref">Table 2</span></a> above shows one additional file method that we have not used thus far.  The <code class="docutils literal"><span class="pre">write</span></code> method allows us to add data to a text file.  Recall that text files contain sequences of characters.  We usually think of these character sequences as being the lines of the file where each line ends with the newline <code class="docutils literal"><span class="pre">\n</span></code> character.  Be very careful to notice that the <code class="docutils literal"><span class="pre">write</span></code> method takes one parameter, a string.  When invoked, the characters of the string will be added to the end of the file.  This means that it is the programmers job to include the newline characters as part of the string if desired.</p>
 <p>As an example, consider the <code class="docutils literal"><span class="pre">qbdata.txt</span></code> file once again.  Assume that we have been asked to provide a file consisting of only the names of the
@@ -230,20 +230,20 @@ Hill,Shaun
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - 21.5. Alternative File Reading Methods' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - 17.5. Alternative File Reading Methods' data-toggle="tooltip">
     <a href="AlternativeFileReadingMethods.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
 
-  <li id="relations-next" class="navLink" title='Next Section - 21.7. With Statements' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - 17.7. With Statements' data-toggle="tooltip" >
     <a href="WithStatements.html" style="color:#999">
-      Next Section - 21.7. With Statements
+      Next Section - 17.7. With Statements
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <li class="navLink" style="text-align: center" title='21. Files' data-toggle="tooltip" >
-    <a href="../CMPS5P/l21.html">
+  <li class="navLink" style="text-align: center" title='17. Files' data-toggle="tooltip" >
+    <a href="../CMPS5P/l17.html">
       <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
     </a>
   </li>

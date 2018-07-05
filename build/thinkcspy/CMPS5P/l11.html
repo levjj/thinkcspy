@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>11. Lists 2 &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <title>11. Functions &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -93,8 +93,8 @@
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11.1. Lists are Mutable" href="../Lists/ListsareMutable.html" />
-    <link rel="prev" title="10.8. Lists and for loops" href="../Lists/Listsandforloops.html" />
+    <link rel="next" title="11.1. Functions" href="../Functions/functions.html" />
+    <link rel="prev" title="10.6. Exercises" href="../PythonModules/Exercises.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -151,23 +151,31 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lists-2">
-<h1>11. Lists 2<a class="headerlink" href="#lists-2" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="functions">
+<h1>11. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Lists 2</span></p>
+<p class="caption"><span class="caption-text">Functions</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/ListsareMutable.html">11.1. Lists are Mutable</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/ListDeletion.html">11.2. List Deletion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/ObjectsandReferences.html">11.3. Objects and References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/Aliasing.html">11.4. Aliasing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/CloningLists.html">11.5. Cloning Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/RepetitionandReferences.html">11.6. Repetition and References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/ListMethods.html">11.7. List Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/AppendversusConcatenate.html">11.8. Append versus Concatenate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/ListComprehensions.html">11.9. List Comprehensions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/NestedLists.html">11.10. Nested Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/StringsandLists.html">11.11. Strings and Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/listTypeConversionFunction.html">11.12. <code class="docutils literal"><span class="pre">list</span></code> Type Conversion Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/functions.html">11.1. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/Functionsthatreturnvalues.html">11.2. Functions that Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/UnitTesting.html">11.3. Unit Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Functions/UnitTesting.html#choosing-good-unit-tests">11.3.1. Choosing Good Unit Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/Variablesandparametersarelocal.html">11.4. Variables and Parameters are Local</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/TheAccumulatorPattern.html">11.5. The Accumulator Pattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Functions/TheAccumulatorPattern.html#the-general-accumulator-pattern">11.5.1. The General Accumulator Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Functions/TheAccumulatorPattern.html#a-variation-on-the-accumulator-pattern">11.5.2. A Variation on the Accumulator Pattern</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/Functionscancallotherfunctions.html">11.6. Functions can Call Other Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/FlowofExecutionSummary.html">11.7. Flow of Execution Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/mainfunction.html">11.8. Using a Main Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/ProgramDevelopment.html">11.9. Program Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/Composition.html">11.10. Composition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/ATurtleBarChart.html">11.11. A Turtle Bar Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/Glossary.html">11.12. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Functions/thinkcspyExercises.html">11.13. Exercises</a></li>
 </ul>
 </div>
 </div>
@@ -175,9 +183,9 @@
 
   
       
-  <li id="relations-next" class="navLink" title='Next Section - 11.1. Lists are Mutable' data-toggle="tooltip" >
-    <a href="../Lists/ListsareMutable.html" style="color:#999">
-      Next Section - 11.1. Lists are Mutable
+  <li id="relations-next" class="navLink" title='Next Section - 11.1. Functions' data-toggle="tooltip" >
+    <a href="../Functions/functions.html" style="color:#999">
+      Next Section - 11.1. Functions
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>

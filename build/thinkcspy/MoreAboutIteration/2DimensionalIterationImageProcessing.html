@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>7.1. 2-Dimensional Iteration: Image Processing &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <title>16.1. 2-Dimensional Iteration: Image Processing &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -93,8 +93,8 @@
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8. More About Iteration" href="../CMPS5P/l8.html" />
-    <link rel="prev" title="7. Image Processing with Nested Loops" href="../CMPS5P/l7.html" />
+    <link rel="next" title="16.2. Graphical User Interfaces" href="../GUIandEventDrivenProgramming/01_intro_gui.html" />
+    <link rel="prev" title="16. Image Processing with Nested Loops and GUI Programming" href="../CMPS5P/l16.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -152,7 +152,7 @@
 <div class="container" id="main-content">
   
   <div class="section" id="dimensional-iteration-image-processing">
-<h1>7.1. 2-Dimensional Iteration: Image Processing<a class="headerlink" href="#dimensional-iteration-image-processing" title="Permalink to this headline">¶</a></h1>
+<h1>16.1. 2-Dimensional Iteration: Image Processing<a class="headerlink" href="#dimensional-iteration-image-processing" title="Permalink to this headline">¶</a></h1>
 <p>Two dimensional tables have both rows and columns.  You have probably seen many tables like this if you have used a
 spreadsheet program.  Another object that is organized in rows and columns is a digital image.  In this section we will
 explore how iteration allows us to manipulate these images.</p>
@@ -163,7 +163,7 @@ that computer scientists like to start counting with 0!  This means that if ther
 <p>In the figure below, the pixel of interest is found at column <strong>c</strong> and row <strong>r</strong>.</p>
 <img alt="../_images/image.png" src="../_images/image.png" />
 <div class="section" id="the-rgb-color-model">
-<h2>7.1.1. The RGB Color Model<a class="headerlink" href="#the-rgb-color-model" title="Permalink to this headline">¶</a></h2>
+<h2>16.1.1. The RGB Color Model<a class="headerlink" href="#the-rgb-color-model" title="Permalink to this headline">¶</a></h2>
 <p>Each pixel of the image will represent a single color.  The specific color depends on a formula that mixes various amounts
 of three basic colors: red, green, and blue.  This technique for creating color is known as the <strong>RGB Color Model</strong>.
 The amount of each color, sometimes called the <strong>intensity</strong> of the color, allows us to have very fine control over the
@@ -312,7 +312,7 @@ print(p.getGreen(), p.getBlue())
             </div>
             </div>
 <div class="section" id="image-objects">
-<h2>7.1.2. Image Objects<a class="headerlink" href="#image-objects" title="Permalink to this headline">¶</a></h2>
+<h2>16.1.2. Image Objects<a class="headerlink" href="#image-objects" title="Permalink to this headline">¶</a></h2>
 <p>To access the pixels in a real image, we need to first create an <code class="docutils literal"><span class="pre">Image</span></code> object.  Image objects can be created in two
 ways.  First, an Image object can be made from the
 files that store digital images.  The image object has an attribute corresponding to the width, the height, and the
@@ -402,7 +402,7 @@ pixel at column 45, row 55, has RGB values of 165, 161, and 158.  Try a few othe
             </div>
             </div>
 <div class="section" id="image-processing-and-nested-iteration">
-<h2>7.1.3. Image Processing and Nested Iteration<a class="headerlink" href="#image-processing-and-nested-iteration" title="Permalink to this headline">¶</a></h2>
+<h2>16.1.3. Image Processing and Nested Iteration<a class="headerlink" href="#image-processing-and-nested-iteration" title="Permalink to this headline">¶</a></h2>
 <p><strong>Image processing</strong> refers to the ability to manipulate the individual pixels in a digital image.  In order to process
 all of the pixels, we need to be able to systematically visit all of the rows and columns in the image.  The best way
 to do this is to use <strong>nested iteration</strong>.</p>
@@ -634,14 +634,20 @@ What remains is to focus on ways that we can better represent our problems in te
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - 7. Image Processing with Nested Loops' data-toggle="tooltip">
-    <a href="../CMPS5P/l7.html" >
+  <li id="relations-prev" class="navLink" title='Previous Section - 16. Image Processing with Nested Loops and GUI Programming' data-toggle="tooltip">
+    <a href="../CMPS5P/l16.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
 
-  <li class="navLink" style="text-align: center" title='7. Image Processing with Nested Loops' data-toggle="tooltip" >
-    <a href="../CMPS5P/l7.html">
+  <li id="relations-next" class="navLink" title='Next Section - 16.2. Graphical User Interfaces' data-toggle="tooltip" >
+    <a href="../GUIandEventDrivenProgramming/01_intro_gui.html" style="color:#999">
+      Next Section - 16.2. Graphical User Interfaces
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <li class="navLink" style="text-align: center" title='16. Image Processing with Nested Loops and GUI Programming' data-toggle="tooltip" >
+    <a href="../CMPS5P/l16.html">
       <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
     </a>
   </li>

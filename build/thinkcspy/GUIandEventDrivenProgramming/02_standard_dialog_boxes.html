@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>20.8. Tkinter Standard Dialog Boxes &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <title>16.9. Tkinter Standard Dialog Boxes &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -93,8 +93,8 @@
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="20.9. GUI Widgets" href="03_widgets.html" />
-    <link rel="prev" title="20.1. Graphical User Interfaces" href="01_intro_gui.html" />
+    <link rel="next" title="16.10. GUI Widgets" href="03_widgets.html" />
+    <link rel="prev" title="16.2. Graphical User Interfaces" href="01_intro_gui.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -152,13 +152,13 @@
 <div class="container" id="main-content">
   
   <div class="section" id="tkinter-standard-dialog-boxes">
-<h1>20.8. Tkinter Standard Dialog Boxes<a class="headerlink" href="#tkinter-standard-dialog-boxes" title="Permalink to this headline">¶</a></h1>
+<h1>16.9. Tkinter Standard Dialog Boxes<a class="headerlink" href="#tkinter-standard-dialog-boxes" title="Permalink to this headline">¶</a></h1>
 <p>There are many common programming tasks that can be performed using
 pre-defined GUI dialog boxes. The following discussion describes these
 dialog boxes and provides some simple examples. You can refer to the
 Python documentation for additional optional parameters.</p>
 <div class="section" id="messages">
-<h2>20.8.1. Messages<a class="headerlink" href="#messages" title="Permalink to this headline">¶</a></h2>
+<h2>16.9.1. Messages<a class="headerlink" href="#messages" title="Permalink to this headline">¶</a></h2>
 <p>A <code class="docutils literal"><span class="pre">messagebox</span></code> can display information to a user.
 There are three variations on these dialog boxes based on the type
 of message you want to display. The functions’ first parameter gives a
@@ -174,7 +174,7 @@ which is typically ignored.</p>
 </div>
 </div>
 <div class="section" id="yes-no-questions">
-<h2>20.8.2. Yes/No Questions<a class="headerlink" href="#yes-no-questions" title="Permalink to this headline">¶</a></h2>
+<h2>16.9.2. Yes/No Questions<a class="headerlink" href="#yes-no-questions" title="Permalink to this headline">¶</a></h2>
 <p>The tkinter <code class="docutils literal"><span class="pre">messagebox</span></code> object also allows you to ask a user simple yes/no
 type questions and varies the button names based on the type of question.
 These functions are:</p>
@@ -191,7 +191,7 @@ These functions are:</p>
 is returned.</p>
 </div>
 <div class="section" id="single-value-data-entry">
-<h2>20.8.3. Single Value Data Entry<a class="headerlink" href="#single-value-data-entry" title="Permalink to this headline">¶</a></h2>
+<h2>16.9.3. Single Value Data Entry<a class="headerlink" href="#single-value-data-entry" title="Permalink to this headline">¶</a></h2>
 <p>If you want to ask the user for a single data value, either a string, integer,
 or floating point value, you can use a <code class="docutils literal"><span class="pre">simpledialog</span></code> object. A user can
 enter the requested value and hit “OK”, which will return the entered value.
@@ -227,7 +227,7 @@ If the user hits “Cancel,” then <code class="docutils literal"><span class="
 </div>
 </div>
 <div class="section" id="file-chooser">
-<h2>20.8.4. File Chooser<a class="headerlink" href="#file-chooser" title="Permalink to this headline">¶</a></h2>
+<h2>16.9.4. File Chooser<a class="headerlink" href="#file-chooser" title="Permalink to this headline">¶</a></h2>
 <p>A common task is to select the names of folders and files on a storage device.
 This can be accomplished using a <code class="docutils literal"><span class="pre">filedialog</span></code> object. Note that these commands
 do not save or load a file. They simply allow a user to select a file. Once
@@ -272,7 +272,7 @@ the dialog box, the returned value is an empty string.</p>
 </div>
 </div>
 <div class="section" id="color-chooser">
-<h2>20.8.5. Color Chooser<a class="headerlink" href="#color-chooser" title="Permalink to this headline">¶</a></h2>
+<h2>16.9.5. Color Chooser<a class="headerlink" href="#color-chooser" title="Permalink to this headline">¶</a></h2>
 <p>Tkinter includes a nice dialog box for choosing colors. You provide it with
 a parent window and an initial color, and it returns a color in two different
 specifications: 1) a RGB value as a tuple, such as <code class="docutils literal"><span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> which
@@ -291,20 +291,20 @@ operation, the return values are <code class="docutils literal"><span class="pre
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - 20.1. Graphical User Interfaces' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - 16.2. Graphical User Interfaces' data-toggle="tooltip">
     <a href="01_intro_gui.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
 
-  <li id="relations-next" class="navLink" title='Next Section - 20.9. GUI Widgets' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - 16.10. GUI Widgets' data-toggle="tooltip" >
     <a href="03_widgets.html" style="color:#999">
-      Next Section - 20.9. GUI Widgets
+      Next Section - 16.10. GUI Widgets
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <li class="navLink" style="text-align: center" title='20. GUI and Event Driven Programming' data-toggle="tooltip" >
-    <a href="../CMPS5P/l20.html">
+  <li class="navLink" style="text-align: center" title='16. Image Processing with Nested Loops and GUI Programming' data-toggle="tooltip" >
+    <a href="../CMPS5P/l16.html">
       <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
     </a>
   </li>

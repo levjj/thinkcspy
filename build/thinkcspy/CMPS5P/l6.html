@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>6. For Loops and Turtle Graphics &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <title>6. Strings &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -93,8 +93,8 @@
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.1. Hello Little Turtles!" href="../PythonTurtle/intro-HelloLittleTurtles.html" />
-    <link rel="prev" title="5.6. Exercises" href="../PythonModules/Exercises.html" />
+    <link rel="next" title="6.1. Strings Revisited" href="../Strings/StringsRevisited.html" />
+    <link rel="prev" title="5.11. Exercises" href="../PythonTurtle/Exercises.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -151,22 +151,36 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="for-loops-and-turtle-graphics">
-<h1>6. For Loops and Turtle Graphics<a class="headerlink" href="#for-loops-and-turtle-graphics" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="strings">
+<h1>6. Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">For Loops And Turtle Graphics</span></p>
+<p class="caption"><span class="caption-text">Strings</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../PythonTurtle/intro-HelloLittleTurtles.html">6.1. Hello Little Turtles!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PythonTurtle/OurFirstTurtleProgram.html">6.2. Our First Turtle Program</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PythonTurtle/InstancesAHerdofTurtles.html">6.3. Instances — A Herd of Turtles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PythonTurtle/TheforLoop.html">6.4. The <code class="docutils literal"><span class="pre">for</span></code> Loop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PythonTurtle/FlowofExecutionoftheforLoop.html">6.5. Flow of Execution of the for Loop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PythonTurtle/IterationSimplifiesourTurtleProgram.html">6.6. Iteration Simplifies our Turtle Program</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PythonTurtle/TherangeFunction.html">6.7. The range Function</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PythonTurtle/AFewMoreturtleMethodsandObservations.html">6.8. A Few More turtle Methods and Observations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PythonTurtle/SummaryofTurtleMethods.html">6.9. Summary of Turtle Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PythonTurtle/Glossary.html">6.10. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PythonTurtle/Exercises.html">6.11. Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/StringsRevisited.html">6.1. Strings Revisited</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/ACollectionDataType.html">6.2. A Collection Data Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/OperationsonStrings.html">6.3. Operations on Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/IndexOperatorWorkingwiththeCharactersofaString.html">6.4. Index Operator: Working with the Characters of a String</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/StringMethods.html">6.5. String Methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Strings/StringMethods.html#string-format-method">6.5.1. String Format Method</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/Length.html">6.6. Length</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/TheSliceOperator.html">6.7. The Slice Operator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/StringComparison.html">6.8. String Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/StringsareImmutable.html">6.9. Strings are Immutable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/TraversalandtheforLoopByItem.html">6.10. Traversal and the <code class="docutils literal"><span class="pre">for</span></code> Loop: By Item</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/TraversalandtheforLoopByIndex.html">6.11. Traversal and the <code class="docutils literal"><span class="pre">for</span></code> Loop: By Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/TraversalandthewhileLoop.html">6.12. Traversal and the <code class="docutils literal"><span class="pre">while</span></code> Loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/Theinandnotinoperators.html">6.13. The <code class="docutils literal"><span class="pre">in</span></code> and <code class="docutils literal"><span class="pre">not</span> <span class="pre">in</span></code> operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/TheAccumulatorPatternwithStrings.html">6.14. The Accumulator Pattern with Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/TurtlesandStringsandLSystems.html">6.15. Turtles and Strings and L-Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/Loopingandcounting.html">6.16. Looping and Counting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/Afindfunction.html">6.17. A <code class="docutils literal"><span class="pre">find</span></code> function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/Optionalparameters.html">6.18. Optional parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/Characterclassification.html">6.19. Character classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/Summary.html">6.20. Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/Glossary.html">6.21. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strings/Exercises.html">6.22. Exercises</a></li>
 </ul>
 </div>
 </div>
@@ -174,9 +188,9 @@
 
   
       
-  <li id="relations-next" class="navLink" title='Next Section - 6.1. Hello Little Turtles!' data-toggle="tooltip" >
-    <a href="../PythonTurtle/intro-HelloLittleTurtles.html" style="color:#999">
-      Next Section - 6.1. Hello Little Turtles!
+  <li id="relations-next" class="navLink" title='Next Section - 6.1. Strings Revisited' data-toggle="tooltip" >
+    <a href="../Strings/StringsRevisited.html" style="color:#999">
+      Next Section - 6.1. Strings Revisited
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>

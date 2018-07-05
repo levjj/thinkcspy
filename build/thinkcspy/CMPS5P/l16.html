@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>16. Tuples &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <title>16. Image Processing with Nested Loops and GUI Programming &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -93,8 +93,8 @@
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="16.1. Tuples and Mutability" href="../Lists/TuplesandMutability.html" />
-    <link rel="prev" title="15.4. Functions that Produce Lists" href="../Lists/FunctionsthatProduceLists.html" />
+    <link rel="next" title="16.1. 2-Dimensional Iteration: Image Processing" href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html" />
+    <link rel="prev" title="15.11. Exercises" href="../ClassesBasics/Exercises.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -151,16 +151,52 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="tuples">
-<h1>16. Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="image-processing-with-nested-loops-and-gui-programming">
+<h1>16. Image Processing with Nested Loops and GUI Programming<a class="headerlink" href="#image-processing-with-nested-loops-and-gui-programming" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Tuples</span></p>
+<p class="caption"><span class="caption-text">Image Processing with Nested Loops and GUI Programming</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/TuplesandMutability.html">16.1. Tuples and Mutability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/TupleAssignment.html">16.2. Tuple Assignment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/TuplesasReturnValues.html">16.3. Tuples as Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/Glossary.html">16.4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Lists/Exercises.html">16.5. Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html">16.1. 2-Dimensional Iteration: Image Processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html#the-rgb-color-model">16.1.1. The RGB Color Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html#image-objects">16.1.2. Image Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html#image-processing-and-nested-iteration">16.1.3. Image Processing and Nested Iteration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/01_intro_gui.html">16.2. Graphical User Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/01_intro_gui.html#gui-programming">16.3. GUI Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/01_intro_gui.html#gui-programming-options">16.4. GUI Programming Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/01_intro_gui.html#tkinter">16.5. TKinter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/01_intro_gui.html#tkinter-pre-programmed-interfaces">16.6. Tkinter Pre-programmed Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/01_intro_gui.html#tkinter-custom-interfaces">16.7. Tkinter Custom Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/01_intro_gui.html#hello-world">16.8. Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/02_standard_dialog_boxes.html">16.9. Tkinter Standard Dialog Boxes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#messages">16.9.1. Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#yes-no-questions">16.9.2. Yes/No Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#single-value-data-entry">16.9.3. Single Value Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#file-chooser">16.9.4. File Chooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#color-chooser">16.9.5. Color Chooser</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/03_widgets.html">16.10. GUI Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/03_widgets.html#creating-widgets">16.11. Creating Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/04_layout_managers.html">16.12. Layout Mangers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/04_layout_managers.html#specifying-dimensions">16.13. Specifying Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/04_layout_managers.html#place-layout-manager">16.14. <em>Place</em> Layout Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/04_layout_managers.html#grid-layout-manager">16.15. <em>Grid</em> Layout Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/04_layout_managers.html#pack-layout-manager">16.16. <em>Pack</em> Layout Manager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../GUIandEventDrivenProgramming/04_layout_managers.html#summary">16.16.1. Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/05_widget_grouping.html">16.17. Widget Groupings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/06_command_events.html">16.18. Command Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/06_command_events.html#hello-world-again">16.19. Hello World Again</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/06_command_events.html#other-events">16.20. Other Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/07_event_binding.html">16.21. Low-Level Event Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/07_event_binding.html#focus">16.22. Focus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/07_event_binding.html#event-binding">16.23. Event Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/07_event_binding.html#event-descriptors">16.24. Event Descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/07_event_binding.html#event-objects">16.25. Event Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GUIandEventDrivenProgramming/07_event_binding.html#event-processing">16.26. Event Processing</a></li>
 </ul>
 </div>
 </div>
@@ -168,9 +204,9 @@
 
   
       
-  <li id="relations-next" class="navLink" title='Next Section - 16.1. Tuples and Mutability' data-toggle="tooltip" >
-    <a href="../Lists/TuplesandMutability.html" style="color:#999">
-      Next Section - 16.1. Tuples and Mutability
+  <li id="relations-next" class="navLink" title='Next Section - 16.1. 2-Dimensional Iteration: Image Processing' data-toggle="tooltip" >
+    <a href="../MoreAboutIteration/2DimensionalIterationImageProcessing.html" style="color:#999">
+      Next Section - 16.1. 2-Dimensional Iteration: Image Processing
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
