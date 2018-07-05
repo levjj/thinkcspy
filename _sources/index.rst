@@ -66,8 +66,6 @@ Table of Contents
    CMPS5P/l15.rst
    CMPS5P/l16.rst
    CMPS5P/l17.rst
-   CMPS5P/l18.rst
-   CMPS5P/l19.rst
 
 
 Optional Labs
