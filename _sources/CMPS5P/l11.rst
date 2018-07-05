@@ -1,19 +1,20 @@
-Lists 2
-:::::::
+Functions
+:::::::::
 
 .. toctree::
-   :caption: Lists 2
+   :caption: Functions
    :maxdepth: 2
 
-   ../Lists/ListsareMutable.rst
-   ../Lists/ListDeletion.rst
-   ../Lists/ObjectsandReferences.rst
-   ../Lists/Aliasing.rst
-   ../Lists/CloningLists.rst
-   ../Lists/RepetitionandReferences.rst
-   ../Lists/ListMethods.rst
-   ../Lists/AppendversusConcatenate.rst
-   ../Lists/ListComprehensions.rst
-   ../Lists/NestedLists.rst
-   ../Lists/StringsandLists.rst
-   ../Lists/listTypeConversionFunction.rst
+   ../Functions/functions.rst
+   ../Functions/Functionsthatreturnvalues.rst
+   ../Functions/UnitTesting.rst
+   ../Functions/Variablesandparametersarelocal.rst
+   ../Functions/TheAccumulatorPattern.rst
+   ../Functions/Functionscancallotherfunctions.rst
+   ../Functions/FlowofExecutionSummary.rst
+   ../Functions/mainfunction.rst
+   ../Functions/ProgramDevelopment.rst
+   ../Functions/Composition.rst
+   ../Functions/ATurtleBarChart.rst
+   ../Functions/Glossary.rst
+   ../Functions/thinkcspyExercises.rst
