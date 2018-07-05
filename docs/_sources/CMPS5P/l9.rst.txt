@@ -1,29 +1,14 @@
-Strings
-:::::::
+Debugging Interlude
+:::::::::::::::::::
 
 .. toctree::
-   :caption: Strings
+   :caption: Debugging Interlude
    :maxdepth: 2
 
-   ../Strings/StringsRevisited.rst
-   ../Strings/ACollectionDataType.rst
-   ../Strings/OperationsonStrings.rst
-   ../Strings/IndexOperatorWorkingwiththeCharactersofaString.rst
-   ../Strings/StringMethods.rst
-   ../Strings/Length.rst
-   ../Strings/TheSliceOperator.rst
-   ../Strings/StringComparison.rst
-   ../Strings/StringsareImmutable.rst
-   ../Strings/TraversalandtheforLoopByItem.rst
-   ../Strings/TraversalandtheforLoopByIndex.rst
-   ../Strings/TraversalandthewhileLoop.rst
-   ../Strings/Theinandnotinoperators.rst
-   ../Strings/TheAccumulatorPatternwithStrings.rst
-   ../Strings/TurtlesandStringsandLSystems.rst
-   ../Strings/Loopingandcounting.rst
-   ../Strings/Afindfunction.rst
-   ../Strings/Optionalparameters.rst
-   ../Strings/Characterclassification.rst
-   ../Strings/Summary.rst
-   ../Strings/Glossary.rst
-   ../Strings/Exercises.rst
+   ../Debugging/intro-HowtobeaSuccessfulProgrammer.rst
+   ../Debugging/HowtoAvoidDebugging.rst
+   ../Debugging/BeginningtipsforDebugging.rst
+   ../Debugging/KnowyourerrorMessages.rst
+   ../Debugging/ProgrammingWithStyle.rst
+   ../Debugging/Summary.rst
+   ../Debugging/Exercises.rst

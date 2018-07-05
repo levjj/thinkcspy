@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>20.11. Layout Mangers &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <title>16.12. Layout Mangers &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -93,8 +93,8 @@
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="20.16. Widget Groupings" href="05_widget_grouping.html" />
-    <link rel="prev" title="20.9. GUI Widgets" href="03_widgets.html" />
+    <link rel="next" title="16.17. Widget Groupings" href="05_widget_grouping.html" />
+    <link rel="prev" title="16.10. GUI Widgets" href="03_widgets.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -152,7 +152,7 @@
 <div class="container" id="main-content">
   
   <div class="section" id="layout-mangers">
-<h1>20.11. Layout Mangers<a class="headerlink" href="#layout-mangers" title="Permalink to this headline">¶</a></h1>
+<h1>16.12. Layout Mangers<a class="headerlink" href="#layout-mangers" title="Permalink to this headline">¶</a></h1>
 <p>A widget will not be visible in a window until you assign it a size and location
 within it’s parent widget. Assigning a specific size and location to every widget
 is tedious and error-prone. In addition, the desired behaviour for most GUI
@@ -190,7 +190,7 @@ for the widget layout within a particular “parent widget”. (Widgets are orga
 in a hierarchy, which is explained in the next lesson.)</p>
 </div>
 <div class="section" id="specifying-dimensions">
-<h1>20.12. Specifying Dimensions<a class="headerlink" href="#specifying-dimensions" title="Permalink to this headline">¶</a></h1>
+<h1>16.13. Specifying Dimensions<a class="headerlink" href="#specifying-dimensions" title="Permalink to this headline">¶</a></h1>
 <p>By default, a size or position value specified as an integer is in pixel units.
 If a different unit of measurement is desired, you can use a string and
 append an appropriate unit symbol. The following units are recognized:</p>
@@ -235,7 +235,7 @@ will set the size of a widget based on the contents of the widget and if you
 want the widget to be larger, you added some <code class="docutils literal"><span class="pre">padding</span></code> around it.</p>
 </div>
 <div class="section" id="place-layout-manager">
-<h1>20.13. <em>Place</em> Layout Manager<a class="headerlink" href="#place-layout-manager" title="Permalink to this headline">¶</a></h1>
+<h1>16.14. <em>Place</em> Layout Manager<a class="headerlink" href="#place-layout-manager" title="Permalink to this headline">¶</a></h1>
 <p>All widgets have a <code class="code docutils literal"><span class="pre">.place(x,</span> <span class="pre">y,</span> <span class="pre">width,</span> <span class="pre">height)</span></code> method that can be used
 to specify the exact location and size of a widget. You can use this method
 to create a static interface that will always look the same regardless of the
@@ -243,7 +243,7 @@ parent’s window size. This layout method is rarely used because the GUI window
 can’t be easily re-sized in user-friendly ways.</p>
 </div>
 <div class="section" id="grid-layout-manager">
-<h1>20.14. <em>Grid</em> Layout Manager<a class="headerlink" href="#grid-layout-manager" title="Permalink to this headline">¶</a></h1>
+<h1>16.15. <em>Grid</em> Layout Manager<a class="headerlink" href="#grid-layout-manager" title="Permalink to this headline">¶</a></h1>
 <p>All widgets have a <code class="code docutils literal"><span class="pre">.grid(row=r,</span> <span class="pre">column=c)</span></code> method that will place a
 widget in the cell (r,c) of a 2-D table. By default the widget is rendered
 in the middle of the cell and as small as possible. This can be changed using
@@ -306,7 +306,7 @@ is typically a process of experimentation. Don’t expect to get your desired
 layout on the first try.</p>
 </div>
 <div class="section" id="pack-layout-manager">
-<h1>20.15. <em>Pack</em> Layout Manager<a class="headerlink" href="#pack-layout-manager" title="Permalink to this headline">¶</a></h1>
+<h1>16.16. <em>Pack</em> Layout Manager<a class="headerlink" href="#pack-layout-manager" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal"><span class="pre">pack</span></code> layout manager tries to place each widget “next to” the
 previous widget in a container. You can call it without any arguments and it
 will try to position and size a widget in reasonable ways. To control
@@ -332,7 +332,7 @@ available space, you also have to set the <code class="docutils literal"><span c
 is typically a process of experimentation. Don’t expect to get your desired
 layout on the first try.</p>
 <div class="section" id="summary">
-<h2>20.15.1. Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2>16.16.1. Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>To summarize, let’s review two very important rules:</p>
 <ul class="simple">
 <li>A widget will not be visible in a window until you assign it a size and
@@ -346,20 +346,20 @@ layout manager for the widgets within a particular parent widget.</li>
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - 20.9. GUI Widgets' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - 16.10. GUI Widgets' data-toggle="tooltip">
     <a href="03_widgets.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
 
-  <li id="relations-next" class="navLink" title='Next Section - 20.16. Widget Groupings' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - 16.17. Widget Groupings' data-toggle="tooltip" >
     <a href="05_widget_grouping.html" style="color:#999">
-      Next Section - 20.16. Widget Groupings
+      Next Section - 16.17. Widget Groupings
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <li class="navLink" style="text-align: center" title='20. GUI and Event Driven Programming' data-toggle="tooltip" >
-    <a href="../CMPS5P/l20.html">
+  <li class="navLink" style="text-align: center" title='16. Image Processing with Nested Loops and GUI Programming' data-toggle="tooltip" >
+    <a href="../CMPS5P/l16.html">
       <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
     </a>
   </li>

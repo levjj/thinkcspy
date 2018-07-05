@@ -1,14 +1,25 @@
-Debugging Interlude
-:::::::::::::::::::
+Functions, Side Effects and Tuples
+::::::::::::::::::::::::::::::::::
 
 .. toctree::
-   :caption: Debugging Interlude
+   :caption: Functions, Side Effects and Tuples
    :maxdepth: 2
 
-   ../Debugging/intro-HowtobeaSuccessfulProgrammer.rst
-   ../Debugging/HowtoAvoidDebugging.rst
-   ../Debugging/BeginningtipsforDebugging.rst
-   ../Debugging/KnowyourerrorMessages.rst
-   ../Debugging/ProgrammingWithStyle.rst
-   ../Debugging/Summary.rst
-   ../Debugging/Exercises.rst
+   ../Functions/TheAccumulatorPattern.rst
+   ../Functions/Functionscancallotherfunctions.rst
+   ../Functions/FlowofExecutionSummary.rst
+   ../Functions/mainfunction.rst
+   ../Functions/ProgramDevelopment.rst
+   ../Functions/Composition.rst
+   ../Functions/ATurtleBarChart.rst
+   ../Functions/Glossary.rst
+   ../Functions/thinkcspyExercises.rst
+   ../Lists/UsingListsasParameters.rst
+   ../Lists/PureFunctions.rst
+   ../Lists/WhichisBetter.rst
+   ../Lists/FunctionsthatProduceLists.rst
+   ../Lists/TuplesandMutability.rst
+   ../Lists/TupleAssignment.rst
+   ../Lists/TuplesasReturnValues.rst
+   ../Lists/Glossary.rst
+   ../Lists/Exercises.rst
