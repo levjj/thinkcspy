@@ -1,13 +1,18 @@
-Python Modules
-::::::::::::::
+For Loops and Turtle Graphics
+:::::::::::::::::::::::::::::
 
 .. toctree::
-   :caption: Python Modules
+   :caption: For Loops And Turtle Graphics
    :maxdepth: 2
 
-   ../PythonModules/modules.rst
-   ../PythonModules/MoreAboutUsingModules.rst
-   ../PythonModules/Themathmodule.rst
-   ../PythonModules/Therandommodule.rst
-   ../PythonModules/Glossary.rst
-   ../PythonModules/Exercises.rst
+   ../PythonTurtle/intro-HelloLittleTurtles.rst
+   ../PythonTurtle/OurFirstTurtleProgram.rst
+   ../PythonTurtle/InstancesAHerdofTurtles.rst
+   ../PythonTurtle/TheforLoop.rst
+   ../PythonTurtle/FlowofExecutionoftheforLoop.rst
+   ../PythonTurtle/IterationSimplifiesourTurtleProgram.rst
+   ../PythonTurtle/TherangeFunction.rst
+   ../PythonTurtle/AFewMoreturtleMethodsandObservations.rst
+   ../PythonTurtle/SummaryofTurtleMethods.rst
+   ../PythonTurtle/Glossary.rst
+   ../PythonTurtle/Exercises.rst

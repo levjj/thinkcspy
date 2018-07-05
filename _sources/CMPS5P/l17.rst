@@ -1,15 +1,16 @@
-Recursion
-:::::::::
+Files
+:::::
 
 .. toctree::
-   :caption: Recursion
+   :caption: Files
    :maxdepth: 2
 
-   ../IntroRecursion/WhatIsRecursion.rst
-   ../IntroRecursion/CalculatingtheSumofaListofNumbers.rst
-   ../IntroRecursion/TheThreeLawsofRecursion.rst
-   ../IntroRecursion/ConvertinganIntegertoaStringinAnyBase.rst
-   ../IntroRecursion/intro-VisualizingRecursion.rst
-   ../IntroRecursion/SierpinskiTriangle.rst
-   ../IntroRecursion/Glossary.rst
-   ../IntroRecursion/ProgrammingExercises.rst
+   ../Files/intro-WorkingwithDataFiles.rst
+   ../Files/FindingaFileonyourDisk.rst
+   ../Files/ReadingaFile.rst
+   ../Files/Iteratingoverlinesinafile.rst
+   ../Files/AlternativeFileReadingMethods.rst
+   ../Files/WritingTextFiles.rst
+   ../Files/WithStatements.rst
+   ../Files/Glossary.rst
+   ../Files/Exercises.rst

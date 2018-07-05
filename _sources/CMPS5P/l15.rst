@@ -1,11 +1,18 @@
-Side Effects
-::::::::::::
+Classes and Objects
+:::::::::::::::::::
 
 .. toctree::
-   :caption: Side Effects
+   :caption: Classes and Objects
    :maxdepth: 2
 
-   ../Lists/UsingListsasParameters.rst
-   ../Lists/PureFunctions.rst
-   ../Lists/WhichisBetter.rst
-   ../Lists/FunctionsthatProduceLists.rst
+   ../ClassesBasics/Objectorientedprogramming.rst
+   ../ClassesBasics/Achangeofperspective.rst
+   ../ClassesBasics/ObjectsRevisited.rst
+   ../ClassesBasics/UserDefinedClasses.rst
+   ../ClassesBasics/ImprovingourConstructor.rst
+   ../ClassesBasics/AddingOtherMethodstoourClass.rst
+   ../ClassesBasics/ObjectsasArgumentsandParameters.rst
+   ../ClassesBasics/ConvertinganObjecttoaString.rst
+   ../ClassesBasics/InstancesasReturnValues.rst
+   ../ClassesBasics/Glossary.rst
+   ../ClassesBasics/Exercises.rst

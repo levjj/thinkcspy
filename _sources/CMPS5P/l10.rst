@@ -1,15 +1,13 @@
-Lists 1
-:::::::
+Python Modules
+::::::::::::::
 
 .. toctree::
-   :caption: Lists 1
+   :caption: Python Modules
    :maxdepth: 2
 
-   ../Lists/intro-Lists.rst
-   ../Lists/ListValues.rst
-   ../Lists/ListLength.rst
-   ../Lists/AccessingElements.rst
-   ../Lists/ListMembership.rst
-   ../Lists/ConcatenationandRepetition.rst
-   ../Lists/ListSlices.rst
-   ../Lists/Listsandforloops.rst
+   ../PythonModules/modules.rst
+   ../PythonModules/MoreAboutUsingModules.rst
+   ../PythonModules/Themathmodule.rst
+   ../PythonModules/Therandommodule.rst
+   ../PythonModules/Glossary.rst
+   ../PythonModules/Exercises.rst

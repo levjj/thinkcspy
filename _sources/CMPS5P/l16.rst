@@ -1,12 +1,16 @@
-Tuples
-::::::
+Image Processing with Nested Loops and GUI Programming
+::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
-   :caption: Tuples
+   :caption: Image Processing with Nested Loops and GUI Programming
    :maxdepth: 2
 
-   ../Lists/TuplesandMutability.rst
-   ../Lists/TupleAssignment.rst
-   ../Lists/TuplesasReturnValues.rst
-   ../Lists/Glossary.rst
-   ../Lists/Exercises.rst
+   ../MoreAboutIteration/2DimensionalIterationImageProcessing.rst
+   ../GUIandEventDrivenProgramming/01_intro_gui.rst
+   ../GUIandEventDrivenProgramming/02_standard_dialog_boxes.rst
+   ../GUIandEventDrivenProgramming/03_widgets.rst
+   ../GUIandEventDrivenProgramming/04_layout_managers.rst
+   ../GUIandEventDrivenProgramming/05_widget_grouping.rst
+   ../GUIandEventDrivenProgramming/06_command_events.rst
+   ../GUIandEventDrivenProgramming/07_event_binding.rst
+   
