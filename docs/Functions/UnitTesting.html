@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>11.3. Unit Testing &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <title>Unit Testing &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -93,8 +93,6 @@
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11.4. Variables and Parameters are Local" href="Variablesandparametersarelocal.html" />
-    <link rel="prev" title="11.2. Functions that Return Values" href="Functionsthatreturnvalues.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -152,7 +150,7 @@
 <div class="container" id="main-content">
   
   <div class="section" id="unit-testing">
-<span id="index-0"></span><h1>11.3. Unit Testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h1>
+<span id="index-0"></span><h1>Unit Testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h1>
 <p>When we write functions that return values, we intend to use them over and over again. However, we want to be
 certain that they return the correct result. To be more certain these functions work correctly we write unit tests.</p>
 <p>To write a <strong>unit test</strong>, we must know the correct result when calling the function with a specific input.</p>
@@ -179,7 +177,7 @@ test.testEqual(square(10), 100)
 <p class="last">The <code class="docutils literal"><span class="pre">test</span></code> module is not a standard Python module. Instead, there are other more powerful and more modern modules. However, the <code class="docutils literal"><span class="pre">test</span></code> module offers a simple introduction to testing that is appropriate at this stage in the interactive text.</p>
 </div>
 <div class="section" id="choosing-good-unit-tests">
-<h2>11.3.1. Choosing Good Unit Tests<a class="headerlink" href="#choosing-good-unit-tests" title="Permalink to this headline">¶</a></h2>
+<h2>Choosing Good Unit Tests<a class="headerlink" href="#choosing-good-unit-tests" title="Permalink to this headline">¶</a></h2>
 <p>When we write unit tests, we should consider significantly different valid inputs to the function.</p>
 <p>For example, the input to the <code class="docutils literal"><span class="pre">square</span></code> function could be either a positive or negative value. These two different kinds of inputs give us two <strong>equivalence classes</strong> of inputs. We then choose an input from each of these classes. <strong>It is important to have at least one test for each equivalence class of inputs.</strong></p>
 <p>Semantic errors are often caused by improperly handling the boundaries between equivalence classes. The boundary for this problem is zero. <strong>It is important to have a test at each boundary.</strong></p>
@@ -193,23 +191,6 @@ test.testEqual(square(10), 100)
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - 11.2. Functions that Return Values' data-toggle="tooltip">
-    <a href="Functionsthatreturnvalues.html" >
-      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
-    </a>
-  </li>
-
-  <li id="relations-next" class="navLink" title='Next Section - 11.4. Variables and Parameters are Local' data-toggle="tooltip" >
-    <a href="Variablesandparametersarelocal.html" style="color:#999">
-      Next Section - 11.4. Variables and Parameters are Local
-      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
-    </a>
-  </li>
-  <li class="navLink" style="text-align: center" title='11. Functions' data-toggle="tooltip" >
-    <a href="../CMPS5P/l11.html">
-      <i id="relationsNextIcon"  class='nextNav glyphicon glyphicon-chevron-up'></i>
-    </a>
-  </li>
 
 
 <script type="text/javascript">

@@ -5,15 +5,8 @@ Functions, Side Effects and Tuples
    :caption: Functions, Side Effects and Tuples
    :maxdepth: 2
 
-   ../Functions/TheAccumulatorPattern.rst
-   ../Functions/Functionscancallotherfunctions.rst
-   ../Functions/FlowofExecutionSummary.rst
    ../Functions/mainfunction.rst
-   ../Functions/ProgramDevelopment.rst
-   ../Functions/Composition.rst
    ../Functions/ATurtleBarChart.rst
-   ../Functions/Glossary.rst
-   ../Functions/thinkcspyExercises.rst
    ../Lists/UsingListsasParameters.rst
    ../Lists/PureFunctions.rst
    ../Lists/WhichisBetter.rst

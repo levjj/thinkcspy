@@ -7,14 +7,11 @@ Functions
 
    ../Functions/functions.rst
    ../Functions/Functionsthatreturnvalues.rst
-   ../Functions/UnitTesting.rst
    ../Functions/Variablesandparametersarelocal.rst
    ../Functions/TheAccumulatorPattern.rst
    ../Functions/Functionscancallotherfunctions.rst
    ../Functions/FlowofExecutionSummary.rst
-   ../Functions/mainfunction.rst
    ../Functions/ProgramDevelopment.rst
    ../Functions/Composition.rst
-   ../Functions/ATurtleBarChart.rst
    ../Functions/Glossary.rst
    ../Functions/thinkcspyExercises.rst
